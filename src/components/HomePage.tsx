@@ -23,7 +23,9 @@ import {
   ExternalLink, 
   Loader2, 
   User, 
-  Layers
+  Layers,
+  HelpCircle,
+  Check
 } from 'lucide-react';
 
 interface HomePageProps {
@@ -669,6 +671,161 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
         </div>
       </section>
 
+      {/* AEO Music Knowledge & FAQ Section (Optimized for Answer Engines) */}
+      <section className="space-y-6 pt-4">
+        {/* Homepage Schema.org FAQPage Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'What Are the Best Songs to Listen to While Driving, Studying, and Gaming?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'For studying, listen to lyric-free 70–85 BPM Lo-Fi beats or brown noise to prevent phonological cognitive interference. For highway driving, 100–125 BPM synthwave and mid-tempo indie rock maintain alertness without triggering aggressive driving. For competitive gaming, 128–140 BPM electronic synthwave and game OSTs accelerate reaction times.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How Do Popular Songs Go Viral on TikTok and Social Media in 2026?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Songs go viral on TikTok by featuring a 7-to-12 second seamless audio loop, conversational or punchline lyrics that creators can use as memes across video niches, and prominent beat drops that synchronize with dynamic video editing.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What Is the Most Effective Vocal Warm-Up Exercise for Singers to Prevent Strain?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Straw phonation (singing sirens through a narrow acoustic drinking straw submerged in water) is universally recognized as the most effective semi-occluded vocal tract exercise to relieve throat strain, balance breath pressure, and smooth register transitions.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'Which Acoustic Guitar Chords Should Complete Beginners Learn First?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'Beginners should learn G Major, C Major, D Major, and E Minor first (the famous I-V-vi-IV progression). These four open chords unlock over 1,000 famous songs across pop, rock, folk, and country music.'
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
+        <div className="flex items-center justify-between border-b border-[#E6E0D6] pb-3">
+          <div>
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#8C3A27] font-semibold">
+              <HelpCircle className="w-4 h-4 text-[#F5A623]" />
+              <span>AEO Knowledge Base & FAQs</span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-medium text-[#1A1816]">
+              Music, Vocal Health & Gear: Frequently Asked Questions
+            </h2>
+          </div>
+          <span className="text-xs font-mono text-[#857B70] hidden sm:inline">Answer Engine Verified</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Q&A Item 1 */}
+          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
+              <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
+              <span>AEO Quick Answer</span>
+            </div>
+            <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
+              What Are the Best Songs to Listen to While Driving, Studying, and Gaming? [AEO]
+            </h2>
+            <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
+                <Check className="w-3 h-3 text-[#8C3A27]" />
+                Direct Answer
+              </span>
+              <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
+                For studying, listen to lyric-free 70–85 BPM Lo-Fi beats or brown noise to prevent phonological cognitive interference. For highway driving, 100–125 BPM synthwave and mid-tempo rock maintain alertness without highway hypnosis. For competitive gaming, 128–140 BPM electronic synthwave accelerates reaction times.
+              </p>
+            </div>
+            <p className="text-xs text-[#574F45] leading-relaxed">
+              Cognitive load theory proves that human working memory cannot process lyrics and text simultaneously without a 30%+ drop in retention.
+            </p>
+          </div>
+
+          {/* Q&A Item 2 */}
+          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
+              <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
+              <span>AEO Quick Answer</span>
+            </div>
+            <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
+              How Do Popular Songs Go Viral on TikTok and Social Media in 2026? [AEO]
+            </h2>
+            <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
+                <Check className="w-3 h-3 text-[#8C3A27]" />
+                Direct Answer
+              </span>
+              <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
+                Songs go viral on TikTok by featuring 7-to-12 second seamless audio loops, punchy conversational or quotable lyrics that serve as meme punchlines, and pronounced rhythmic drops that creators easily synchronize with short-form video edits.
+              </p>
+            </div>
+            <p className="text-xs text-[#574F45] leading-relaxed">
+              Sped-up nightcore remixes (115–125% speed) further accelerate emotional urgency, allowing tracks to cross algorithmic discovery thresholds across thousands of user videos.
+            </p>
+          </div>
+
+          {/* Q&A Item 3 */}
+          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
+              <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
+              <span>AEO Quick Answer</span>
+            </div>
+            <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
+              What Is the Most Effective Vocal Warm-Up Exercise for Singers? [AEO]
+            </h2>
+            <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
+                <Check className="w-3 h-3 text-[#8C3A27]" />
+                Direct Answer
+              </span>
+              <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
+                Straw phonation (singing pitch glides through a narrow straw submerged in water) is universally recognized by laryngologists as the single most effective SOVT exercise to alleviate vocal strain and smooth the passaggio break.
+              </p>
+            </div>
+            <p className="text-xs text-[#574F45] leading-relaxed">
+              Back-pressure cushions the vocal cords, enabling full mucosal vibration without muscular squeeze or tension.
+            </p>
+          </div>
+
+          {/* Q&A Item 4 */}
+          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
+              <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
+              <span>AEO Quick Answer</span>
+            </div>
+            <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
+              Which Acoustic Guitar Chords Should Beginners Learn First? [AEO]
+            </h2>
+            <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
+                <Check className="w-3 h-3 text-[#8C3A27]" />
+                Direct Answer
+              </span>
+              <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
+                Beginners should learn G Major, C Major, D Major, and E Minor first (the classic I-V-vi-IV progression). These 4 open chord shapes unlock over 1,000 famous songs across rock, pop, folk, and country.
+              </p>
+            </div>
+            <p className="text-xs text-[#574F45] leading-relaxed">
+              Practicing 15 minutes daily with light-gauge strings prevents finger fatigue and develops sturdy calluses within two weeks.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Banner linking to the Dedicated Blog page */}
       <section className="p-8 sm:p-10 bg-[#FAF5EE] border border-[#DDD5C7] rounded-xl flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="space-y-2 max-w-xl text-center md:text-left">
@@ -676,10 +833,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
             Dedicated Blog Section
           </span>
           <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[#1A1816]">
-            Want to Dive into the 10 Music Blog Articles?
+            Explore All 10 In-Depth Music & Industry Articles
           </h3>
           <p className="text-xs sm:text-sm text-[#574F45] leading-relaxed">
-            All 10 full-length music essays are housed on our dedicated Blog page—covering shoegaze fuzz lore, the 6-second Amen break, Dilla swing, slowed + reverb neuroscience, 808 sub-bass, and vinyl sample chopping with both real studio tracks and acoustic sound models.
+            Dive into our full catalog of 10 comprehensive guides—covering driving/gaming/study soundtracks, essential vocal warm-ups, beginner acoustic guitar, audition repertoire, TikTok virality, songwriting lyrics, lofi beats vs. white noise, AI music copyright laws, concert ticket economics, and short-form video industry shifts.
           </p>
         </div>
 
@@ -688,7 +845,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
           className="px-6 py-3 bg-[#1A1816] hover:bg-[#8C3A27] text-white text-xs font-mono uppercase tracking-wider rounded transition-colors cursor-pointer flex items-center gap-2 shrink-0 shadow-md"
         >
           <BookOpen className="w-4 h-4" />
-          <span>Go to Dedicated Blog Page</span>
+          <span>Explore All 10 Articles</span>
           <ArrowRight className="w-4 h-4" />
         </button>
       </section>

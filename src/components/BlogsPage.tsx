@@ -67,10 +67,10 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({
           <span>The Music Blog · 10 Stories & Audio Breakdowns</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#1A1816]">
-          Music Lore, Internet Culture & Sonic Breakdowns
+          Music Guides, Vocal Craft & Industry Analysis
         </h1>
         <p className="text-base sm:text-lg text-[#524B41] font-serif italic max-w-3xl leading-relaxed">
-          From viral TikTok shoegaze and 168 BPM breakbeats to J Dilla’s drunk swing and 808 sub-bass physics—explore the stories and listen to the sounds in real time.
+          From driving/gaming/study focus playlists and essential vocal warm-ups to beginner acoustic guitar, TikTok virality, songwriting craft, AI music copyright, and live concert economics.
         </p>
 
         {/* Listening Highlight Strip */}

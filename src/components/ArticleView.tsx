@@ -20,7 +20,8 @@ import {
   FileText,
   Headphones,
   Clock,
-  ExternalLink
+  ExternalLink,
+  HelpCircle
 } from 'lucide-react';
 
 interface ArticleViewProps {
@@ -424,31 +425,78 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
 
         {/* Narrative Prose Sections */}
         <div className={`space-y-12 max-w-2xl mx-auto ${fontSize === 'large' ? 'text-lg leading-loose' : 'text-base leading-relaxed'}`}>
-          {article.sections.map((section, sIdx) => (
-            <div key={sIdx} className="space-y-6">
-              
-              {section.heading && (
-                <h2 className="font-serif text-2xl sm:text-3xl font-medium tracking-tight pt-4 text-[#1A1816]">
-                  {section.heading}
-                </h2>
-              )}
+          {/* AEO Schema.org Structured Data */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: article.sections
+                  .filter(s => s.heading && s.heading.includes('?'))
+                  .map(s => ({
+                    '@type': 'Question',
+                    name: s.heading,
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: s.paragraphs.join(' ')
+                    }
+                  }))
+              })
+            }}
+          />
 
-              {section.paragraphs.map((p, pIdx) => {
-                // Drop cap on first paragraph of first section
-                const isOpening = sIdx === 0 && pIdx === 0;
-                return (
-                  <p
-                    key={pIdx}
-                    className={`text-[#2B2723] font-serif ${
-                      isOpening
-                        ? 'first-letter:text-6xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-[#8C3A27]'
-                        : ''
-                    }`}
-                  >
-                    {p}
-                  </p>
-                );
-              })}
+          {article.sections.map((section, sIdx) => {
+            const isQna = section.heading && (section.heading.includes('?') || section.heading.includes('[AEO'));
+            return (
+              <div key={sIdx} className={`space-y-6 ${isQna ? 'pt-2' : ''}`}>
+                
+                {section.heading && (
+                  <div className="space-y-1">
+                    {isQna && (
+                      <div className="flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-[#8C3A27] font-semibold">
+                        <HelpCircle className="w-3.5 h-3.5 text-[#F5A623]" />
+                        <span>AEO Answer Engine Question</span>
+                      </div>
+                    )}
+                    <h2 className={`font-serif text-2xl sm:text-3xl font-medium tracking-tight pt-2 ${isQna ? 'text-[#8C3A27]' : 'text-[#1A1816]'}`}>
+                      {section.heading}
+                    </h2>
+                  </div>
+                )}
+
+                {section.paragraphs.map((p, pIdx) => {
+                  // Direct Answer callout block for AEO
+                  if (p.startsWith('Direct Answer:')) {
+                    const cleanAnswer = p.replace('Direct Answer:', '').trim();
+                    return (
+                      <div key={pIdx} className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-5 rounded-r-lg space-y-1.5 shadow-xs my-4">
+                        <span className="text-[11px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-[#8C3A27]" />
+                          <span>Direct Answer (AEO Summary)</span>
+                        </span>
+                        <p className="font-serif text-[#1A1816] font-medium text-base sm:text-lg leading-relaxed">
+                          {cleanAnswer}
+                        </p>
+                      </div>
+                    );
+                  }
+
+                  // Drop cap on first paragraph of first section
+                  const isOpening = sIdx === 0 && pIdx === 0;
+                  return (
+                    <p
+                      key={pIdx}
+                      className={`text-[#2B2723] font-serif ${
+                        isOpening
+                          ? 'first-letter:text-6xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-[#8C3A27]'
+                          : ''
+                      }`}
+                    >
+                      {p}
+                    </p>
+                  );
+                })}
 
               {/* Pull quote if present */}
               {section.pullQuote && (
@@ -495,7 +543,8 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
               )}
 
             </div>
-          ))}
+          );
+        })}
         </div>
 
         {/* Recommended Archival Discography */}
