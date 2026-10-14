@@ -85,27 +85,34 @@ export default function App() {
   // Route resolution & SEO application
   const resolveRoute = useCallback((path: string, updateHistory = false) => {
     const normalized = path.replace(/\/+$/, '') || '/';
-
-    // 1. Check if path corresponds to an article slug
     const cleanSlug = normalized.replace(/^\//, '');
-    const matchedArticle = ARTICLES.find(a => a.id === cleanSlug);
+
+    // 1. Check if path corresponds to an article slug (or backward compatible slug)
+    const matchedArticle = ARTICLES.find(a => {
+      if (a.id === cleanSlug) return true;
+      if (cleanSlug === 'best-songs-driving-gaming-studying' && a.id === 'best-songs-driving-studying') return true;
+      if (cleanSlug === 'ai-music-generation-copyright-laws' && a.id === 'ai-music-copyright-laws') return true;
+      if (cleanSlug === 'dynamic-ticket-pricing' && a.id === 'concert-ticket-prices') return true;
+      return false;
+    });
 
     if (matchedArticle) {
+      const canonicalPath = `/${matchedArticle.id}`;
       setSelectedArticle(matchedArticle);
-      setCurrentPath(normalized);
-      if (updateHistory && window.location.pathname !== normalized) {
-        window.history.pushState(null, '', normalized);
+      setCurrentPath(canonicalPath);
+      if (updateHistory || window.location.pathname !== canonicalPath) {
+        window.history.pushState(null, '', canonicalPath);
       }
       const seo = ARTICLE_SEO_CONFIGS[matchedArticle.id] || {
         title: `${matchedArticle.title} | MuseWave`,
         description: matchedArticle.excerpt,
-        path: normalized,
+        path: canonicalPath,
         targetKeyword: '',
       };
       applyPageSeo({
         title: seo.title,
         description: seo.description,
-        canonicalPath: normalized,
+        canonicalPath: canonicalPath,
       });
       return;
     }
@@ -113,41 +120,41 @@ export default function App() {
     // 2. Static Pages
     setSelectedArticle(null);
 
-    if (normalized === '/music-blogs' || normalized === '/blogs') {
+    if (normalized === '/blogs' || normalized === '/music-blogs') {
       setCurrentPage('blogs');
-      setCurrentPath('/music-blogs');
-      if (updateHistory && window.location.pathname !== '/music-blogs') {
-        window.history.pushState(null, '', '/music-blogs');
+      setCurrentPath('/blogs');
+      if (updateHistory || window.location.pathname !== '/blogs') {
+        window.history.pushState(null, '', '/blogs');
       }
-      const seo = STATIC_PAGES_SEO['/music-blogs'];
+      const seo = STATIC_PAGES_SEO['/blogs'];
       applyPageSeo({
         title: seo.title,
         description: seo.description,
-        canonicalPath: '/music-blogs',
+        canonicalPath: '/blogs',
       });
     } else if (normalized === '/about' || normalized === '/about-musewave') {
       setCurrentPage('about');
-      setCurrentPath('/about-musewave');
-      if (updateHistory && window.location.pathname !== '/about-musewave') {
-        window.history.pushState(null, '', '/about-musewave');
+      setCurrentPath('/about');
+      if (updateHistory || window.location.pathname !== '/about') {
+        window.history.pushState(null, '', '/about');
       }
       const seo = STATIC_PAGES_SEO['/about'];
       applyPageSeo({
         title: seo.title,
         description: seo.description,
-        canonicalPath: '/about-musewave',
+        canonicalPath: '/about',
       });
     } else if (normalized === '/saved' || normalized === '/saved-articles') {
       setCurrentPage('saved');
-      setCurrentPath('/saved-articles');
-      if (updateHistory && window.location.pathname !== '/saved-articles') {
-        window.history.pushState(null, '', '/saved-articles');
+      setCurrentPath('/saved');
+      if (updateHistory || window.location.pathname !== '/saved') {
+        window.history.pushState(null, '', '/saved');
       }
       const seo = STATIC_PAGES_SEO['/saved'];
       applyPageSeo({
         title: seo.title,
         description: seo.description,
-        canonicalPath: '/saved-articles',
+        canonicalPath: '/saved',
       });
     } else {
       // Home default
@@ -188,7 +195,7 @@ export default function App() {
   };
 
   const handleBackToBlogs = () => {
-    handleNavigate('/music-blogs');
+    handleNavigate('/blogs');
   };
 
   // Audio playback for articles (prioritizes real song preview audio)
@@ -258,7 +265,7 @@ export default function App() {
             {/* Page 1: Home (Spotify-style player, Billboard Top 10, Verified Artist Hub) */}
             {currentPage === 'home' && (
               <HomePage
-                onNavigateToBlogs={() => handleNavigate('/music-blogs')}
+                onNavigateToBlogs={() => handleNavigate('/blogs')}
               />
             )}
 
@@ -277,7 +284,7 @@ export default function App() {
             {/* Page 3: About Page */}
             {currentPage === 'about' && (
               <AboutPage
-                onNavigateToBlogs={() => handleNavigate('/music-blogs')}
+                onNavigateToBlogs={() => handleNavigate('/blogs')}
               />
             )}
 
@@ -316,7 +323,7 @@ export default function App() {
       <Footer
         onNavigate={handleNavigate}
         onSelectCategory={(_category) => {
-          handleNavigate('/music-blogs');
+          handleNavigate('/blogs');
         }}
       />
 

@@ -59,10 +59,10 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2 text-xs text-[#574F45]">
               <li>
                 <a
-                  href="/music-blogs"
+                  href="/blogs"
                   onClick={(e) => {
                     e.preventDefault();
-                    onNavigate('/music-blogs');
+                    onNavigate('/blogs');
                   }}
                   className="font-semibold text-[#8C3A27] hover:underline cursor-pointer flex items-center gap-1"
                 >
@@ -72,10 +72,10 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="/music-blogs"
+                  href="/blogs"
                   onClick={(e) => {
                     e.preventDefault();
-                    onNavigate('/music-blogs');
+                    onNavigate('/blogs');
                     if (onSelectCategory) onSelectCategory('Focus & Productivity');
                   }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
@@ -85,10 +85,10 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="/music-blogs"
+                  href="/blogs"
                   onClick={(e) => {
                     e.preventDefault();
-                    onNavigate('/music-blogs');
+                    onNavigate('/blogs');
                     if (onSelectCategory) onSelectCategory('Vocal Mastery');
                   }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
@@ -98,10 +98,10 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="/music-blogs"
+                  href="/blogs"
                   onClick={(e) => {
                     e.preventDefault();
-                    onNavigate('/music-blogs');
+                    onNavigate('/blogs');
                     if (onSelectCategory) onSelectCategory('Guitar & Gear');
                   }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
@@ -111,10 +111,10 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="/music-blogs"
+                  href="/blogs"
                   onClick={(e) => {
                     e.preventDefault();
-                    onNavigate('/music-blogs');
+                    onNavigate('/blogs');
                     if (onSelectCategory) onSelectCategory('Songwriting Craft');
                   }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
@@ -124,10 +124,10 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="/about-musewave"
+                  href="/about"
                   onClick={(e) => {
                     e.preventDefault();
-                    onNavigate('/about-musewave');
+                    onNavigate('/about');
                   }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer pt-1 block"
                 >
@@ -180,10 +180,10 @@ export const Footer: React.FC<FooterProps> = ({
           <p>© 2026 MUSEWAVE Music Hub & Blog. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <a
-              href="/music-blogs"
+              href="/blogs"
               onClick={(e) => {
                 e.preventDefault();
-                onNavigate('/music-blogs');
+                onNavigate('/blogs');
               }}
               className="hover:text-[#1A1816] transition-colors cursor-pointer"
             >
@@ -191,10 +191,10 @@ export const Footer: React.FC<FooterProps> = ({
             </a>
             <span>·</span>
             <a
-              href="/about-musewave"
+              href="/about"
               onClick={(e) => {
                 e.preventDefault();
-                onNavigate('/about-musewave');
+                onNavigate('/about');
               }}
               className="hover:text-[#1A1816] transition-colors cursor-pointer"
             >

@@ -3,7 +3,7 @@ import { Article } from '../types';
 export const ARTICLES: Article[] = [
   // 1. Best songs while driving, gaming, studying
   {
-    id: 'best-songs-driving-gaming-studying',
+    id: 'best-songs-driving-studying',
     title: 'Best Songs While Driving, Gaming, and Studying: The Science of Focus Playlists',
     subtitle: 'How neurological BPM entrainment, lyric-free frequencies, and dynamic sonic textures optimize alertness behind the wheel, reaction times in esports, and deep cognitive study.',
     category: 'Focus & Productivity',
@@ -17,7 +17,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'JV',
       bio: 'Investigating psychoacoustics, rhythm entrainment, and cognitive performance audio.'
     },
-    coverImage: '/images/driving_gaming_study_1791631501809.jpg',
+    coverImage: '/images/driving-focus-study.jpg',
     imageCaption: 'Fig. 1 — Creative workstation merging high-tempo digital gaming audio with late-night driving nightscapes and deep work ambient tones.',
     excerpt: 'Different cognitive tasks demand vastly different soundwaves. Matching your brainwave frequency to optimal BPM ranges unlocks superhuman focus in games, long highway stamina, and hours of uninterrupted deep study.',
     keyTrack: {
@@ -107,7 +107,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'ER',
       bio: 'Training Grammy-nominated touring vocalists and theater performers across contemporary and classical styles.'
     },
-    coverImage: '/images/vocal_warmup_singer_1791631529536.jpg',
+    coverImage: '/images/vocal-warmup-singer.jpg',
     imageCaption: 'Fig. 2 — Studio condenser microphone setup with vocal pitch registers and daily acoustic warm-up sheet music.',
     excerpt: 'Singing without a structured physiological warm-up is the athletic equivalent of sprinting on cold hamstrings. Discover the 5 essential exercises that protect vocal folds, smooth out your break, and unlock effortless high notes.',
     keyTrack: {
@@ -198,7 +198,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'MT',
       bio: 'Guiding thousands of new guitarists through acoustic fundamentals and instrument setup.'
     },
-    coverImage: '/images/acoustic_guitar_guide_1791631568083.jpg',
+    coverImage: '/images/acoustic-guitar-guide.jpg',
     imageCaption: 'Fig. 3 — Handcrafted acoustic guitar with foundational chord diagrams and brass plectrum in studio sunlight.',
     excerpt: 'Picking up an acoustic guitar for the very first time is thrilling, but sore fingertips and muffled chord buzz cause 90% of beginners to quit within 60 days. Master these core mechanics to play songs in your very first week.',
     keyTrack: {
@@ -288,7 +288,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'SC',
       bio: 'Adjudicating professional conservatory auditions and West End theater casting calls.'
     },
-    coverImage: '/images/vocal_audition_stage_1791631611921.jpg',
+    coverImage: '/images/vocal-audition-stage.jpg',
     imageCaption: 'Fig. 4 — Spotlight cutting across empty auditorium audition stage with center dynamic vocal microphone.',
     excerpt: 'Walk into your next singing audition with unbreakable confidence. Casting panels make up their minds in the first 16 bars. Here are the 10 greatest songs to highlight your technical control, emotional vulnerability, and authentic vocal color.',
     keyTrack: {
@@ -380,7 +380,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'DM',
       bio: 'Analyzing algorithmic audio distribution and short-form social music trends for major labels.'
     },
-    coverImage: '/images/viral_tiktok_music_1791631662315.jpg',
+    coverImage: '/images/viral-tiktok-music.jpg',
     imageCaption: 'Fig. 5 — Sound waveform analytics and short-form video engagement metrics on creator studio workstation.',
     excerpt: 'Virality is no longer an accidental stroke of luck; it is an engineered science of auditory dopamine. Learn how modern producers construct 10-second micro-hooks designed specifically for TikTok choreography, speed-up culture, and algorithm loops.',
     keyTrack: {
@@ -470,7 +470,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'CS',
       bio: 'Publishing work on narrative songwriting mechanics, prosody, and emotional rhetoric.'
     },
-    coverImage: '/images/songwriting_lyrics_desk_1791631708552.jpg',
+    coverImage: '/images/songwriting-lyrics-desk.jpg',
     imageCaption: 'Fig. 6 — Lyric notebook with rhyming schemes, meter annotations, and acoustic guitar at creative writing desk.',
     excerpt: 'Great lyrics do not tell listeners what to feel; they place listeners inside the room with vivid, tangible details. Unpack 7 battle-tested lyric writing techniques that transform vague poetry into emotionally resonant songs.',
     keyTrack: {
@@ -564,7 +564,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'AT',
       bio: 'Researching binaural frequency stimulation, stochastic noise, and workplace cognitive productivity.'
     },
-    coverImage: '/images/lofi_beats_study_1791631763968.jpg',
+    coverImage: '/images/lofi-beats-study.jpg',
     imageCaption: 'Fig. 7 — Cozy study desk by rain-streaked window with vintage cassette deck, notebook, and headphones.',
     excerpt: 'Millions of students swear by 24/7 Lofi Girl study streams, while neurodivergent workers turn to deep rumble brown noise. Examine peer-reviewed neurobiology to understand which sound profile optimizes your brain.',
     keyTrack: {
@@ -640,7 +640,7 @@ export const ARTICLES: Article[] = [
 
   // 8. Is AI Music Generation Legal? Copyright Laws and AI Songs
   {
-    id: 'ai-music-generation-copyright-laws',
+    id: 'ai-music-copyright-laws',
     title: 'Is AI Music Generation Legal? Copyright Laws, Voice Cloning, and AI Songs Explained',
     subtitle: 'From the "Heart on My Sleeve" Drake-Weeknd lawsuit to US Copyright Office landmark rulings: understanding training manifests, voice personality rights, and human authorship tests.',
     category: 'Legal & AI Music',
@@ -654,7 +654,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'JS',
       bio: 'Advising recording artists, publishers, and AI audio startups on digital copyright and licensing compliance.'
     },
-    coverImage: '/images/ai_music_copyright_1791631826356.jpg',
+    coverImage: '/images/ai-music-copyright.jpg',
     imageCaption: 'Fig. 8 — Scales of justice balanced beside algorithmic audio neural network visualizers in mixing suite.',
     excerpt: 'Can you legally copyright a song generated with Suno or Udio? Is cloning an artist’s vocal timbre illegal? Explore the landmark copyright rulings and right-of-publicity statutes reshaping music intellectual property.',
     keyTrack: {
@@ -730,7 +730,7 @@ export const ARTICLES: Article[] = [
 
   // 9. Why Are Ticket Prices for Concerts So Expensive Right Now?
   {
-    id: 'dynamic-ticket-pricing',
+    id: 'concert-ticket-prices',
     title: 'Why Are Ticket Prices for Concerts So Expensive Right Now? The Economics of Live Music',
     subtitle: 'Dynamic ticket pricing algorithms, Ticketmaster-Live Nation consolidation, skyrocketing stadium touring costs, and secondary resale bots: why live music became a luxury good.',
     category: 'Industry & Economics',
@@ -744,7 +744,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'CD',
       bio: 'Analyzing touring logistics, ticketing algorithms, and antitrust live music policy.'
     },
-    coverImage: '/images/concert_stadium_crowd_1791631874940.jpg',
+    coverImage: '/images/concert-stadium-crowd.jpg',
     imageCaption: 'Fig. 9 — Sold-out stadium arena illuminated by tens of thousands of smartphones and stage pyrotechnics.',
     excerpt: 'Fans logging into ticket presales regularly face $600 price tags for nosebleed seats. Unpack the interlocking economic forces—from algorithmic surge pricing to touring inflation—that transformed live concerts into luxury commodities.',
     keyTrack: {
@@ -834,7 +834,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'MC',
       bio: 'Investigating internet subcultures, music distribution algorithms, and pop songwriting evolution.'
     },
-    coverImage: '/images/music_industry_trends_1791631921738.jpg',
+    coverImage: '/images/music-industry-trends.jpg',
     imageCaption: 'Fig. 10 — Content creator and audio engineer collaborating in modern production space with vertical stream monitors.',
     excerpt: 'The music industry is undergoing its most profound structural realignment since the invention of the phonograph. Discover how vertical short-form video has altered song structure, A&R talent discovery, and how artists build lasting careers.',
     keyTrack: {

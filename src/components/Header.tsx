@@ -54,13 +54,13 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
 
           <a
-            href="/music-blogs"
+            href="/blogs"
             onClick={(e) => {
               e.preventDefault();
-              onNavigate('/music-blogs');
+              onNavigate('/blogs');
             }}
             className={`hover:text-[#1A1816] transition-colors cursor-pointer py-1 border-b-2 flex items-center gap-1.5 ${
-              currentPath === '/music-blogs' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
+              currentPath === '/blogs' || currentPath === '/music-blogs' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
             }`}
           >
             <span>Blog</span>
@@ -70,26 +70,26 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
 
           <a
-            href="/about-musewave"
+            href="/about"
             onClick={(e) => {
               e.preventDefault();
-              onNavigate('/about-musewave');
+              onNavigate('/about');
             }}
             className={`hover:text-[#1A1816] transition-colors cursor-pointer py-1 border-b-2 ${
-              currentPath === '/about-musewave' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
+              currentPath === '/about' || currentPath === '/about-musewave' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
             }`}
           >
             About
           </a>
 
           <a
-            href="/saved-articles"
+            href="/saved"
             onClick={(e) => {
               e.preventDefault();
-              onNavigate('/saved-articles');
+              onNavigate('/saved');
             }}
             className={`hover:text-[#1A1816] transition-colors cursor-pointer py-1 border-b-2 hidden sm:flex items-center gap-1.5 ${
-              currentPath === '/saved-articles' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
+              currentPath === '/saved' || currentPath === '/saved-articles' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
             }`}
           >
             <span>Saved</span>
@@ -114,10 +114,10 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
 
           <a
-            href="/music-blogs"
+            href="/blogs"
             onClick={(e) => {
               e.preventDefault();
-              onNavigate('/music-blogs');
+              onNavigate('/blogs');
             }}
             className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white bg-[#1A1816] hover:bg-[#8C3A27] rounded transition-colors cursor-pointer whitespace-nowrap"
           >

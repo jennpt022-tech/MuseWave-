@@ -62,7 +62,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateToBlogs }) => {
 
       <div className="pt-8 border-t border-[#E6E0D6] flex justify-center">
         <a
-          href="/music-blogs"
+          href="/blogs"
           onClick={(e) => {
             e.preventDefault();
             onNavigateToBlogs();

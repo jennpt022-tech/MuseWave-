@@ -12,14 +12,14 @@ export const STATIC_PAGES_SEO: Record<string, PageSeoConfig> = {
     description: 'Explore our Music Journal & Blogs, Artist Hub for Billboard charts, verified Spotify audio, and deep music lore. Stream exclusive tracks and master sound now!',
     targetKeyword: 'Music Journal & Blogs, Artist Hub',
   },
-  '/music-blogs': {
-    path: '/music-blogs',
+  '/blogs': {
+    path: '/blogs',
     title: 'Music Blogs & Audio Insights: Read Pro Artist Guides',
     description: 'Read authoritative Music blogs on vocal health, acoustic guitar, TikTok virality, and studio songwriting. Discover proven music techniques and read today!',
     targetKeyword: 'Music blogs',
   },
-  '/blogs': {
-    path: '/music-blogs',
+  '/music-blogs': {
+    path: '/blogs',
     title: 'Music Blogs & Audio Insights: Read Pro Artist Guides',
     description: 'Read authoritative Music blogs on vocal health, acoustic guitar, TikTok virality, and studio songwriting. Discover proven music techniques and read today!',
     targetKeyword: 'Music blogs',
@@ -31,7 +31,7 @@ export const STATIC_PAGES_SEO: Record<string, PageSeoConfig> = {
     targetKeyword: 'Music Journalism',
   },
   '/about-musewave': {
-    path: '/about-musewave',
+    path: '/about',
     title: 'About MuseWave: Music Journalism, Audio Lore & Tech',
     description: 'Discover the mission behind MuseWave, combining music journalism, psychoacoustics, verified artist lore, and studio guides. Join our sonic journey now!',
     targetKeyword: 'Music Journalism',
@@ -43,7 +43,7 @@ export const STATIC_PAGES_SEO: Record<string, PageSeoConfig> = {
     targetKeyword: 'Bookmarked Songs',
   },
   '/saved-articles': {
-    path: '/saved-articles',
+    path: '/saved',
     title: 'Saved Reading List & Library: Your Bookmarked Songs',
     description: 'Access your personal bookmarked songs, saved vocal warm-ups, guitar guides, and studio sound breakdowns. Revisit your favorite music guides right now!',
     targetKeyword: 'Bookmarked Songs',
@@ -51,8 +51,8 @@ export const STATIC_PAGES_SEO: Record<string, PageSeoConfig> = {
 };
 
 export const ARTICLE_SEO_CONFIGS: Record<string, PageSeoConfig> = {
-  'best-songs-driving-gaming-studying': {
-    path: '/best-songs-driving-gaming-studying',
+  'best-songs-driving-studying': {
+    path: '/best-songs-driving-studying',
     title: 'Best Songs While Driving, Gaming, and Studying Playlists',
     description: 'Discover the Best Songs While Driving, Gaming, and Studying backed by science. Learn optimal tempo ranges and stream curated focus audio to boost stamina now!',
     targetKeyword: 'Best Songs While Driving, Gaming, and Studying',
@@ -93,14 +93,14 @@ export const ARTICLE_SEO_CONFIGS: Record<string, PageSeoConfig> = {
     description: 'Compare Music for Studying across lo-fi hip hop and white noise to maximize memory recall and minimize cognitive distraction. Optimize your study workflow now!',
     targetKeyword: 'Music for Studying',
   },
-  'ai-music-generation-copyright-laws': {
-    path: '/ai-music-generation-copyright-laws',
+  'ai-music-copyright-laws': {
+    path: '/ai-music-copyright-laws',
     title: 'AI Music Generation; Copyright Laws: What Artists Face',
     description: 'Navigate AI Music Generation; Copyright Laws, voice cloning lawsuits, and fair use rulings shaping modern music rights. Protect your creative rights today!',
     targetKeyword: 'AI Music Generation; Copyright Laws',
   },
-  'dynamic-ticket-pricing': {
-    path: '/dynamic-ticket-pricing',
+  'concert-ticket-prices': {
+    path: '/concert-ticket-prices',
     title: 'Dynamic Ticket Pricing: Why Concert Passes Cost So Much',
     description: 'Analyze Dynamic ticket pricing algorithms, monopoly ticketing fees, and secondary scalper bots driving live concert prices sky high. Beat surge pricing today!',
     targetKeyword: 'Dynamic ticket pricing',
@@ -110,6 +110,26 @@ export const ARTICLE_SEO_CONFIGS: Record<string, PageSeoConfig> = {
     title: 'Music Industry Revolution: How TikTok Alters Global Hits',
     description: 'See how short-form video alters the modern Music Industry, transforming A&R scouting, album length, and fan royalty economics. Unpack modern streaming now!',
     targetKeyword: 'Music Industry',
+  },
+
+  // Backward compatible route aliases
+  'best-songs-driving-gaming-studying': {
+    path: '/best-songs-driving-studying',
+    title: 'Best Songs While Driving, Gaming, and Studying Playlists',
+    description: 'Discover the Best Songs While Driving, Gaming, and Studying backed by science. Learn optimal tempo ranges and stream curated focus audio to boost stamina now!',
+    targetKeyword: 'Best Songs While Driving, Gaming, and Studying',
+  },
+  'ai-music-generation-copyright-laws': {
+    path: '/ai-music-copyright-laws',
+    title: 'AI Music Generation; Copyright Laws: What Artists Face',
+    description: 'Navigate AI Music Generation; Copyright Laws, voice cloning lawsuits, and fair use rulings shaping modern music rights. Protect your creative rights today!',
+    targetKeyword: 'AI Music Generation; Copyright Laws',
+  },
+  'dynamic-ticket-pricing': {
+    path: '/concert-ticket-prices',
+    title: 'Dynamic Ticket Pricing: Why Concert Passes Cost So Much',
+    description: 'Analyze Dynamic ticket pricing algorithms, monopoly ticketing fees, and secondary scalper bots driving live concert prices sky high. Beat surge pricing today!',
+    targetKeyword: 'Dynamic ticket pricing',
   },
 };
 

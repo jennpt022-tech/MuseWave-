@@ -209,7 +209,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
 
           {/* Quick jump to dedicated Blog */}
           <a
-            href="/music-blogs"
+            href="/blogs"
             onClick={(e) => {
               e.preventDefault();
               onNavigateToBlogs();
@@ -845,7 +845,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
         </div>
 
         <a
-          href="/music-blogs"
+          href="/blogs"
           onClick={(e) => {
             e.preventDefault();
             onNavigateToBlogs();
