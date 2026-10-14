@@ -106,11 +106,17 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             </span>
           </div>
 
-          <h3
-            onClick={() => onSelect(article)}
-            className="font-serif text-xl font-medium text-[#1A1816] group-hover:text-[#8C3A27] transition-colors cursor-pointer leading-snug line-clamp-2"
-          >
-            {article.title}
+          <h3 className="font-serif text-xl font-medium text-[#1A1816] group-hover:text-[#8C3A27] transition-colors leading-snug line-clamp-2">
+            <a
+              href={`/${article.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onSelect(article);
+              }}
+              className="hover:underline"
+            >
+              {article.title}
+            </a>
           </h3>
 
           <p className="text-xs text-[#524B41] font-serif italic line-clamp-2 leading-relaxed">
@@ -131,12 +137,16 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             <span className="text-[11px] text-[#4A433A] font-medium">{article.author.name}</span>
           </div>
           
-          <button
-            onClick={() => onSelect(article)}
+          <a
+            href={`/${article.id}`}
+            onClick={(e) => {
+              e.preventDefault();
+              onSelect(article);
+            }}
             className="text-xs font-semibold text-[#8C3A27] hover:underline cursor-pointer flex items-center gap-0.5"
           >
             Read Story →
-          </button>
+          </a>
         </div>
 
       </div>

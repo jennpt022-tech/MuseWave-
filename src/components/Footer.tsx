@@ -3,17 +3,13 @@ import { Check, ArrowRight, BookOpen } from 'lucide-react';
 import { CATEGORIES } from '../data/articles';
 
 interface FooterProps {
-  onSelectCategory: (category: string) => void;
-  onOpenBlogs: () => void;
-  onOpenAbout: () => void;
-  onHomeClick: () => void;
+  onNavigate: (path: string) => void;
+  onSelectCategory?: (category: string) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
+  onNavigate,
   onSelectCategory,
-  onOpenBlogs,
-  onOpenAbout,
-  onHomeClick,
 }) => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
@@ -36,12 +32,16 @@ export const Footer: React.FC<FooterProps> = ({
           
           {/* Column 1: Publication Masthead (5 cols) */}
           <div className="md:col-span-5 space-y-4">
-            <button
-              onClick={onHomeClick}
-              className="text-left font-serif text-3xl font-bold tracking-tight text-[#1A1816] hover:text-[#8C3A27] transition-colors cursor-pointer"
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('/');
+              }}
+              className="text-left font-serif text-3xl font-bold tracking-tight text-[#1A1816] hover:text-[#8C3A27] transition-colors cursor-pointer block"
             >
               MUSEWAVE
-            </button>
+            </a>
             <p className="text-sm font-serif italic text-[#574F45] leading-relaxed max-w-md">
               An independent music blog and journal exploring the physics of sound, recording history, acoustic anthropology, and musical culture.
             </p>
@@ -58,53 +58,81 @@ export const Footer: React.FC<FooterProps> = ({
             </h3>
             <ul className="space-y-2 text-xs text-[#574F45]">
               <li>
-                <button
-                  onClick={onOpenBlogs}
+                <a
+                  href="/music-blogs"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('/music-blogs');
+                  }}
                   className="font-semibold text-[#8C3A27] hover:underline cursor-pointer flex items-center gap-1"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
                   <span>All 10 Blog Articles</span>
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onSelectCategory('Acoustics & Synthesis')}
+                <a
+                  href="/music-blogs"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('/music-blogs');
+                    if (onSelectCategory) onSelectCategory('Focus & Productivity');
+                  }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
                 >
-                  Acoustics & Synthesis
-                </button>
+                  Focus & Productivity
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onSelectCategory('Jazz Studies')}
+                <a
+                  href="/music-blogs"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('/music-blogs');
+                    if (onSelectCategory) onSelectCategory('Vocal Mastery');
+                  }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
                 >
-                  Jazz & Modal Harmony
-                </button>
+                  Vocal Mastery
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onSelectCategory('Rhythm & Heritage')}
+                <a
+                  href="/music-blogs"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('/music-blogs');
+                    if (onSelectCategory) onSelectCategory('Guitar & Gear');
+                  }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
                 >
-                  Rhythm & African Clave
-                </button>
+                  Guitar & Gear
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onSelectCategory('Minimalism & Space')}
+                <a
+                  href="/music-blogs"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('/music-blogs');
+                    if (onSelectCategory) onSelectCategory('Songwriting Craft');
+                  }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
                 >
-                  Japanese Ambient Music
-                </button>
+                  Songwriting Craft
+                </a>
               </li>
               <li>
-                <button
-                  onClick={onOpenAbout}
+                <a
+                  href="/about-musewave"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('/about-musewave');
+                  }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer pt-1 block"
                 >
                   About MuseWave
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -151,15 +179,32 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="pt-8 border-t border-[#E2DBD0] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#857B70]">
           <p>© 2026 MUSEWAVE Music Hub & Blog. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <button onClick={onOpenBlogs} className="hover:text-[#1A1816] transition-colors cursor-pointer">
+            <a
+              href="/music-blogs"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('/music-blogs');
+              }}
+              className="hover:text-[#1A1816] transition-colors cursor-pointer"
+            >
               Blog (10 Articles)
-            </button>
+            </a>
             <span>·</span>
-            <button onClick={onOpenAbout} className="hover:text-[#1A1816] transition-colors cursor-pointer">
+            <a
+              href="/about-musewave"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('/about-musewave');
+              }}
+              className="hover:text-[#1A1816] transition-colors cursor-pointer"
+            >
               About
-            </button>
+            </a>
             <span>·</span>
-            <button onClick={onHomeClick} className="hover:text-[#1A1816] transition-colors cursor-pointer">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="hover:text-[#1A1816] transition-colors cursor-pointer"
+            >
               Back to Top
             </button>
           </div>

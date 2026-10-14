@@ -8,7 +8,7 @@ export const ARTICLES: Article[] = [
     subtitle: 'How neurological BPM entrainment, lyric-free frequencies, and dynamic sonic textures optimize alertness behind the wheel, reaction times in esports, and deep cognitive study.',
     category: 'Focus & Productivity',
     vibe: 'Sonic Concentration',
-    readTime: '8 min read',
+    readTime: '12 min read',
     publishedDate: 'October 8, 2026',
     featured: true,
     author: {
@@ -17,7 +17,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'JV',
       bio: 'Investigating psychoacoustics, rhythm entrainment, and cognitive performance audio.'
     },
-    coverImage: '/src/assets/images/driving_gaming_study_1791631501809.jpg',
+    coverImage: '/images/driving_gaming_study_1791631501809.jpg',
     imageCaption: 'Fig. 1 — Creative workstation merging high-tempo digital gaming audio with late-night driving nightscapes and deep work ambient tones.',
     excerpt: 'Different cognitive tasks demand vastly different soundwaves. Matching your brainwave frequency to optimal BPM ranges unlocks superhuman focus in games, long highway stamina, and hours of uninterrupted deep study.',
     keyTrack: {
@@ -62,11 +62,19 @@ export const ARTICLES: Article[] = [
         }
       },
       {
-        heading: 'Curated Soundtracks for Peak Daily Performance',
+        heading: 'Esports Audio Mechanics: Frequency Separation and Spatial Awareness',
         paragraphs: [
-          'For intense gaming sessions, orchestral gaming scores such as Mick Gordon’s DOOM soundtrack or Porter Robinson’s high-energy electronica provide an adrenaline rush without breaking concentration.',
-          'For mathematical problem-solving or coding sprints, low-frequency ambient drone and steady 80 BPM tape-distorted lo-fi boom-bap foster the elusive psychological "flow state" discovered by Mihaly Csikszentmihalyi.',
-          'By deliberately calibrating your soundtrack to the metabolic and mental demands of your current environment, sound transforms from mere entertainment into a potent cognitive amplifier.'
+          'Competitive gaming environments pose an acute psychoacoustic challenge where subtle auditory cues—such as enemy footstep gravel crunches or distant weapon reloading clicks—determine match outcomes.',
+          'Standard commercial pop masters are heavily compressed with limited dynamic range and dominant mid-bass energy that masks delicate 2 kHz to 5 kHz footsteps.',
+          'To optimize performance, esports champions select game-specific electronic ambient tracks or video game orchestral OSTs designed explicitly to exist around gaming sound-effect frequency valleys.'
+        ]
+      },
+      {
+        heading: 'The Dopamine Metronome: Crafting Sustainable 4-Hour Deep Work Playlists',
+        paragraphs: [
+          'Sustaining concentration through intense academic study or deep software programming requires balancing cognitive arousal against sensory fatigue.',
+          'When audio is entirely repetitive like flat white noise, the brain eventually habituates and seeks novel stimulation, leading to impulsive smartphone checking. When audio is wildly unpredictable with abrupt key changes, working memory continually reorients away from the task.',
+          'The sweet spot is structured instrumental lo-fi hip-hop or ambient electronica (such as Brian Eno, Tycho, or Nujabes): soothing melodic motifs over steady, predictable 80 BPM drum pulses that provide steady micro-doses of dopamine without conscious distraction.'
         ],
         listeningNotes: [
           'Keep volume below 65 dB during studying to avoid cognitive fatigue.',
@@ -85,12 +93,12 @@ export const ARTICLES: Article[] = [
 
   // 2. Essential Vocal Warm-Up Exercises for Singers
   {
-    id: 'essential-vocal-warmup-exercises',
+    id: 'singing-vocal-warm-up-exercises',
     title: 'Essential Vocal Warm-Up Exercises for Singers: Protect Your Voice & Expand Range',
     subtitle: 'From lip trills and straw phonation to sirens and tongue root relaxation: the daily vocal pedagogy routines used by touring artists and Broadway vocalists.',
     category: 'Vocal Mastery',
     vibe: 'Acoustic Resonance',
-    readTime: '9 min read',
+    readTime: '12 min read',
     publishedDate: 'October 8, 2026',
     featured: true,
     author: {
@@ -99,7 +107,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'ER',
       bio: 'Training Grammy-nominated touring vocalists and theater performers across contemporary and classical styles.'
     },
-    coverImage: '/src/assets/images/vocal_warmup_singer_1791631529536.jpg',
+    coverImage: '/images/vocal_warmup_singer_1791631529536.jpg',
     imageCaption: 'Fig. 2 — Studio condenser microphone setup with vocal pitch registers and daily acoustic warm-up sheet music.',
     excerpt: 'Singing without a structured physiological warm-up is the athletic equivalent of sprinting on cold hamstrings. Discover the 5 essential exercises that protect vocal folds, smooth out your break, and unlock effortless high notes.',
     keyTrack: {
@@ -144,6 +152,14 @@ export const ARTICLES: Article[] = [
         }
       },
       {
+        heading: 'Deconstructing the Passaggio: Blending Chest Voice and Head Voice',
+        paragraphs: [
+          'Every singer encounters the dreaded vocal "crack" or break—the passaggio transition where the heavy thyroarytenoid-dominant chest voice yields to the lighter cricothyroid-dominant head voice.',
+          'Inexperienced singers react to this transition by either pushing additional breath volume to muscle their chest voice too high, or abruptly flipping into a weak, unsupported breathy falsetto.',
+          'The solution lies in training the mixed voice ("voix mixte") through narrow vowels like "ee" and "oo", allowing acoustic resonance to shift smoothly from the mouth into the nasal pharynx and skull cavities.'
+        ]
+      },
+      {
         heading: 'Step-by-Step Daily Vocal Warm-Up Sequence',
         paragraphs: [
           'Step 1: Diaphragmatic Appoggio Breathing. Inhale for 4 seconds allowing the ribs and lower abdomen to expand 360 degrees, then hiss out on a sustained "tsss" for 16 seconds to activate the core transverse abdominis.',
@@ -168,12 +184,12 @@ export const ARTICLES: Article[] = [
 
   // 3. Beginner’s Guide to Learning Acoustic Guitar
   {
-    id: 'beginners-guide-learning-acoustic-guitar',
+    id: 'acoustic-guitar-for-beginners',
     title: 'Beginner’s Guide to Learning Acoustic Guitar: First Chords, Posture, and Muscle Memory',
     subtitle: 'The complete step-by-step roadmap from your first open G chord to painless fretboard transitions, strumming rhythm, and avoiding common rookie stumbling blocks.',
     category: 'Guitar & Gear',
     vibe: 'Fretboard Foundations',
-    readTime: '9 min read',
+    readTime: '12 min read',
     publishedDate: 'October 8, 2026',
     featured: true,
     author: {
@@ -182,7 +198,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'MT',
       bio: 'Guiding thousands of new guitarists through acoustic fundamentals and instrument setup.'
     },
-    coverImage: '/src/assets/images/acoustic_guitar_guide_1791631568083.jpg',
+    coverImage: '/images/acoustic_guitar_guide_1791631568083.jpg',
     imageCaption: 'Fig. 3 — Handcrafted acoustic guitar with foundational chord diagrams and brass plectrum in studio sunlight.',
     excerpt: 'Picking up an acoustic guitar for the very first time is thrilling, but sore fingertips and muffled chord buzz cause 90% of beginners to quit within 60 days. Master these core mechanics to play songs in your very first week.',
     keyTrack: {
@@ -227,11 +243,19 @@ export const ARTICLES: Article[] = [
         }
       },
       {
-        heading: 'The Secret to Clean Strumming & Rhythm Consistency',
+        heading: 'Rhythmic Strumming Mechanics: The Pendulum Arm Technique',
         paragraphs: [
           'The right hand provides the heartbeat of music. Most beginners hold their guitar pick with an iron grip, creating rigid, robotic strumming that constantly snags against the metal windings.',
           'Hold your pick gently between the pad of your thumb and the side of your index finger, allowing the flexible plastic tip to glide over the strings like a paintbrush feathering across canvas.',
           'Always practice with a metronome set to 65 BPM. Keep your right wrist moving in a continuous down-up pendulum motion on every eighth note, even when skipping a beat, to develop infallible internal groove.'
+        ]
+      },
+      {
+        heading: 'Developing Flawless Muscle Memory: The 1-Minute Chord Change Drill',
+        paragraphs: [
+          'The biggest bottleneck for new guitarists is the pause between chords where the rhythm stumbles while searching for finger placements.',
+          'To overcome this, use the 1-Minute Change Drill: set a timer for 60 seconds, choose two chords (like G Major and C Major), and switch between them as many times as possible without stopping.',
+          'Do not worry about strumming perfection initially; focus purely on landing all fingers simultaneously rather than placing one finger down at a time. Within one week, your hand transitions without conscious thought.'
         ],
         listeningNotes: [
           'Listen for buzzing: if a note buzzes, slide your finger closer to the fret wire.',
@@ -250,12 +274,12 @@ export const ARTICLES: Article[] = [
 
   // 4. Top 10 Best Songs for Vocal Practice and Auditions
   {
-    id: 'best-songs-vocal-practice-auditions',
+    id: 'songs-for-auditions',
     title: 'Top 10 Best Songs for Vocal Practice and Auditions: Show Your Dynamic Range',
     subtitle: 'A curated masterlist of vocal audition standards across pop, indie, theater, and soul selected by casting directors to showcase pitch accuracy, agility, and tone.',
     category: 'Vocal Mastery',
     vibe: 'Audition Repertoire',
-    readTime: '8 min read',
+    readTime: '12 min read',
     publishedDate: 'October 8, 2026',
     featured: true,
     author: {
@@ -264,7 +288,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'SC',
       bio: 'Adjudicating professional conservatory auditions and West End theater casting calls.'
     },
-    coverImage: '/src/assets/images/vocal_audition_stage_1791631611921.jpg',
+    coverImage: '/images/vocal_audition_stage_1791631611921.jpg',
     imageCaption: 'Fig. 4 — Spotlight cutting across empty auditorium audition stage with center dynamic vocal microphone.',
     excerpt: 'Walk into your next singing audition with unbreakable confidence. Casting panels make up their minds in the first 16 bars. Here are the 10 greatest songs to highlight your technical control, emotional vulnerability, and authentic vocal color.',
     keyTrack: {
@@ -309,7 +333,15 @@ export const ARTICLES: Article[] = [
         }
       },
       {
-        heading: 'The 10-Song Masterlist Categorized by Vocal Strength',
+        heading: 'Conquering Performance Anxiety and Stage Intonation Traps',
+        paragraphs: [
+          'Stage fright causes adrenaline surges that trigger rapid shallow breathing, dry mouth, and micro-tremors in the vocal cords, causing pitch to drift sharp.',
+          'To counteract this autonomic nervous response, execute diaphragmatic box breathing (4 seconds in, 4 seconds hold, 4 seconds out, 4 seconds hold) five minutes before stepping onto the stage.',
+          'Ground both feet firmly shoulder-width apart, allow your knees to remain unlocked, and envision singing your first note to a specific friend seated in the back row to channel physical tension into emotional projection.'
+        ]
+      },
+      {
+        heading: 'The 10-Song Master Breakdown by Vocal Archetype',
         paragraphs: [
           '1. For Emotional Ballads: Adele — "Make You Feel My Love". Tests sustained legato breathing and subtle dynamic swell.',
           '2. For Contemporary Belt & Mix: Sara Bareilles — "She Used to Be Mine". Demands steady chest-to-head register blending.',
@@ -334,12 +366,12 @@ export const ARTICLES: Article[] = [
 
   // 5. How Popular Songs Go Viral on TikTok and Social Media
   {
-    id: 'how-popular-songs-go-viral-tiktok-social-media',
+    id: 'trending-songs',
     title: 'How Popular Songs Go Viral on TikTok and Social Media: Reverse Engineering the Algorithm',
     subtitle: 'Dissecting the 7-to-15 second audio hooks, pitch-shifted nightcore trends, memeable lyrical anchors, and user-generated sound choreography dominating the FYP.',
     category: 'Music Tech & Trends',
     vibe: 'Algorithmic Wave',
-    readTime: '9 min read',
+    readTime: '12 min read',
     publishedDate: 'October 8, 2026',
     featured: true,
     author: {
@@ -348,7 +380,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'DM',
       bio: 'Analyzing algorithmic audio distribution and short-form social music trends for major labels.'
     },
-    coverImage: '/src/assets/images/viral_tiktok_music_1791631662315.jpg',
+    coverImage: '/images/viral_tiktok_music_1791631662315.jpg',
     imageCaption: 'Fig. 5 — Sound waveform analytics and short-form video engagement metrics on creator studio workstation.',
     excerpt: 'Virality is no longer an accidental stroke of luck; it is an engineered science of auditory dopamine. Learn how modern producers construct 10-second micro-hooks designed specifically for TikTok choreography, speed-up culture, and algorithm loops.',
     keyTrack: {
@@ -393,7 +425,15 @@ export const ARTICLES: Article[] = [
         }
       },
       {
-        heading: 'The Modern Creator Flywheel: How to Seed Sounds Online',
+        heading: 'The Nightcore Acceleration: Why Sped-Up Audio Commands Higher Retention',
+        paragraphs: [
+          'One of the most striking phenomena on short-form video platforms is the organic user preference for pitch-shifted, accelerated master tracks.',
+          'By increasing track tempo by 15% to 25% and pitching vocals up by two to three semitones, songs trigger a nostalgic anime nightcore sensation that enhances perceived dopamine release.',
+          'Major record labels have responded by officially releasing "Sped Up" and "Slowed + Reverb" EP variants simultaneously with album debuts, capturing millions of additional streams across streaming platforms.'
+        ]
+      },
+      {
+        heading: 'The Creator Seeding Playbook: Micro-Influencer Cascades and UGC Dynamics',
         paragraphs: [
           'Major record labels no longer rely solely on radio DJs; they allocate tens of thousands of dollars to micro-influencer seed campaigns across niche TikTok communities.',
           'By partnering with 50 creators simultaneously across makeup, gaming, fitness, and lifestyle niches, an audio clip crosses the algorithmic threshold into TikTok’s "Popular Sound" recommendation engine.',
@@ -416,12 +456,12 @@ export const ARTICLES: Article[] = [
 
   // 6. How to Write Better Song Lyrics: 7 Simple Techniques
   {
-    id: 'how-to-write-better-song-lyrics-7-techniques',
+    id: 'song-writing-techniques',
     title: 'How to Write Better Song Lyrics: 7 Simple Techniques Used by Hitmakers',
     subtitle: 'Move past generic clichés with sensory imagery, object writing, conversational cadence, rhyming hierarchy, and chorus contrast used by Taylor Swift, Finneas, and Max Martin.',
     category: 'Songwriting Craft',
     vibe: 'Poetic Lyricism',
-    readTime: '9 min read',
+    readTime: '12 min read',
     publishedDate: 'October 8, 2026',
     featured: true,
     author: {
@@ -430,7 +470,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'CS',
       bio: 'Publishing work on narrative songwriting mechanics, prosody, and emotional rhetoric.'
     },
-    coverImage: '/src/assets/images/songwriting_lyrics_desk_1791631708552.jpg',
+    coverImage: '/images/songwriting_lyrics_desk_1791631708552.jpg',
     imageCaption: 'Fig. 6 — Lyric notebook with rhyming schemes, meter annotations, and acoustic guitar at creative writing desk.',
     excerpt: 'Great lyrics do not tell listeners what to feel; they place listeners inside the room with vivid, tangible details. Unpack 7 battle-tested lyric writing techniques that transform vague poetry into emotionally resonant songs.',
     keyTrack: {
@@ -475,6 +515,14 @@ export const ARTICLES: Article[] = [
         }
       },
       {
+        heading: 'The Law of Prosody: Aligning Musical Stress with Spoken Speech Cadence',
+        paragraphs: [
+          'Prosody is the marriage of lyric rhythm and melodic contour. When natural spoken stresses match musical downbeats, a lyric feels effortless and emotionally convincing.',
+          'When a songwriter misplaces a word stress—such as accentuating the second syllable of "table" because the melody requires an upbeat—the song immediately sounds awkward and amateurish.',
+          'Before finalizing a melody, always speak your lyric aloud in a neutral conversational tone. Observe which words receive natural vocal emphasis, and ensure those exact words align with the strong beats of your chord progression.'
+        ]
+      },
+      {
         heading: 'The 7 Essential Rules for Better Lyrics',
         paragraphs: [
           '1. Sensory Specificity: Ground every verse in at least two concrete physical senses (sight, touch, sound, or smell).',
@@ -502,12 +550,12 @@ export const ARTICLES: Article[] = [
 
   // 7. Lofi Beats vs. White Noise: What Music Helps You Study Best?
   {
-    id: 'lofi-beats-vs-white-noise-study-music',
+    id: 'music-for-studying',
     title: 'Lofi Beats vs. White Noise: What Music Helps You Study Best? The Neurological Breakdown',
     subtitle: 'Comparing 70–90 BPM downtempo boom-bap swing with stochastic sound frequencies (white, pink, brown noise) to discover what actually optimizes memory retention and deep focus.',
     category: 'Cognitive Audio',
     vibe: 'Lo-Fi Tape Warmth',
-    readTime: '9 min read',
+    readTime: '12 min read',
     publishedDate: 'October 8, 2026',
     featured: true,
     author: {
@@ -516,7 +564,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'AT',
       bio: 'Researching binaural frequency stimulation, stochastic noise, and workplace cognitive productivity.'
     },
-    coverImage: '/src/assets/images/lofi_beats_study_1791631763968.jpg',
+    coverImage: '/images/lofi_beats_study_1791631763968.jpg',
     imageCaption: 'Fig. 7 — Cozy study desk by rain-streaked window with vintage cassette deck, notebook, and headphones.',
     excerpt: 'Millions of students swear by 24/7 Lofi Girl study streams, while neurodivergent workers turn to deep rumble brown noise. Examine peer-reviewed neurobiology to understand which sound profile optimizes your brain.',
     keyTrack: {
@@ -561,11 +609,19 @@ export const ARTICLES: Article[] = [
         }
       },
       {
-        heading: 'How to Choose Your Ideal Study Audio Profile',
+        heading: 'The Neurochemistry of Lo-Fi Boom-Bap: Why Unquantized Swing Calms the Nervous System',
         paragraphs: [
-          'Choose Brown or Pink Noise when: You are tackling dense technical reading, memorizing foreign language vocabulary, or writing an academic thesis.',
-          'Choose Lo-Fi Hip-Hop Beats when: You are coding, organizing spreadsheets, editing visual photography, or studying for long 4-hour evening shifts.',
-          'By rotating between structured brown noise for high-concentration reading and warm lo-fi boom-bap for creative execution, you prevent auditory fatigue and achieve sustained cognitive flow.'
+          'Pioneered by beatmaking legends J Dilla and Nujabes, lo-fi hip-hop deliberately turns off DAW grid quantization, allowing snare hits to lag milliseconds behind the metronome beat.',
+          'This slight rhythmic "drunken swing" mirrors natural human cardiovascular and respiration micro-fluctuations, triggering an involuntary parasympathetic relaxation response in the autonomic nervous system.',
+          'Combined with vinyl surface noise, analog tape saturation, and warm 7th jazz chords, lo-fi tracks generate an acoustic weighted blanket that suppresses task-induced anxiety.'
+        ]
+      },
+      {
+        heading: 'Designing Your Ideal Workday Sonic Regimen: Task-Specific Audio Stacking',
+        paragraphs: [
+          'Hour 1–2 (Deep Analytic Reading & Memorization): Deploy steady brown noise or sub-bass rain soundscapes at 55 dB to silence sensory room distraction.',
+          'Hour 3–4 (Creative Writing, Coding, & Execution): Transition into 75–85 BPM instrumental lo-fi hip-hop or ambient post-rock to supply sustained dopaminergic momentum.',
+          'By rotating between structured stochastic noise for pure reading and warm lo-fi boom-bap for creative execution, you prevent auditory fatigue and achieve sustained cognitive flow.'
         ],
         listeningNotes: [
           'Listen at moderate volume (between 50 and 60 decibels).',
@@ -584,12 +640,12 @@ export const ARTICLES: Article[] = [
 
   // 8. Is AI Music Generation Legal? Copyright Laws and AI Songs
   {
-    id: 'is-ai-music-generation-legal-copyright-laws',
+    id: 'ai-music-generation-copyright-laws',
     title: 'Is AI Music Generation Legal? Copyright Laws, Voice Cloning, and AI Songs Explained',
     subtitle: 'From the "Heart on My Sleeve" Drake-Weeknd lawsuit to US Copyright Office landmark rulings: understanding training manifests, voice personality rights, and human authorship tests.',
     category: 'Legal & AI Music',
     vibe: 'Legal Precedent',
-    readTime: '10 min read',
+    readTime: '13 min read',
     publishedDate: 'October 8, 2026',
     featured: true,
     author: {
@@ -598,7 +654,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'JS',
       bio: 'Advising recording artists, publishers, and AI audio startups on digital copyright and licensing compliance.'
     },
-    coverImage: '/src/assets/images/ai_music_copyright_1791631826356.jpg',
+    coverImage: '/images/ai_music_copyright_1791631826356.jpg',
     imageCaption: 'Fig. 8 — Scales of justice balanced beside algorithmic audio neural network visualizers in mixing suite.',
     excerpt: 'Can you legally copyright a song generated with Suno or Udio? Is cloning an artist’s vocal timbre illegal? Explore the landmark copyright rulings and right-of-publicity statutes reshaping music intellectual property.',
     keyTrack: {
@@ -643,7 +699,15 @@ export const ARTICLES: Article[] = [
         }
       },
       {
-        heading: 'What the Future Holds for Creators and Artists',
+        heading: 'The Training Data Battleground: Fair Use vs. Mass Copyright Infringement',
+        paragraphs: [
+          'The central legal battleground in AI music litigation hinges on the ingestion of copyrighted master recordings during model training.',
+          'AI developers claim that scraping millions of commercial tracks from streaming platforms constitutes non-expressive "Fair Use" analogous to how a human student studies musical history.',
+          'Conversely, record labels and publishers argue that commercial generative models build market substitutes directly competing against the very artists whose catalogs were extracted without licensing compensation.'
+        ]
+      },
+      {
+        heading: 'The Future Regulatory Landscape: Legislative Protections and Commercial Licensing',
         paragraphs: [
           'Forward-looking artists like Grimes have embraced ethical AI partnerships, offering 50/50 royalty splits for approved commercial songs that utilize verified vocal clones.',
           'Simultaneously, the US Congress is advancing bipartisan legislation (such as the NO FAKES Act) to establish a comprehensive federal right protecting every citizen against unauthorized digital replicas of their voice and likeness.',
@@ -666,12 +730,12 @@ export const ARTICLES: Article[] = [
 
   // 9. Why Are Ticket Prices for Concerts So Expensive Right Now?
   {
-    id: 'why-are-ticket-prices-for-concerts-so-expensive',
+    id: 'dynamic-ticket-pricing',
     title: 'Why Are Ticket Prices for Concerts So Expensive Right Now? The Economics of Live Music',
     subtitle: 'Dynamic ticket pricing algorithms, Ticketmaster-Live Nation consolidation, skyrocketing stadium touring costs, and secondary resale bots: why live music became a luxury good.',
     category: 'Industry & Economics',
     vibe: 'Live Stadium Rush',
-    readTime: '9 min read',
+    readTime: '13 min read',
     publishedDate: 'October 8, 2026',
     featured: true,
     author: {
@@ -680,7 +744,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'CD',
       bio: 'Analyzing touring logistics, ticketing algorithms, and antitrust live music policy.'
     },
-    coverImage: '/src/assets/images/concert_stadium_crowd_1791631874940.jpg',
+    coverImage: '/images/concert_stadium_crowd_1791631874940.jpg',
     imageCaption: 'Fig. 9 — Sold-out stadium arena illuminated by tens of thousands of smartphones and stage pyrotechnics.',
     excerpt: 'Fans logging into ticket presales regularly face $600 price tags for nosebleed seats. Unpack the interlocking economic forces—from algorithmic surge pricing to touring inflation—that transformed live concerts into luxury commodities.',
     keyTrack: {
@@ -725,7 +789,15 @@ export const ARTICLES: Article[] = [
         }
       },
       {
-        heading: 'The Battle for Legislative Reform and Fan Survival',
+        heading: 'Behind the Staging Curtain: Trucking Inflation, Labor Costs, and Arena Production Budgets',
+        paragraphs: [
+          'Mounting an arena or stadium production in 2026 requires an unprecedented logistical apparatus: up to 90 tractor-trailers traversing continents, hundreds of union riggers, and millions of dollars in insurance liabilities.',
+          'Supply chain disruptions following global shutdowns permanently inflated the lease rates of specialized touring sleeper buses by over 70%, while specialized lighting technicians command premium salaries.',
+          'Mid-tier artists with 500,000 monthly listeners often tour at a net financial loss, leading many beloved independent bands to cancel international tour legs because ticket sales cannot outpace freight expenses.'
+        ]
+      },
+      {
+        heading: 'The Fight for Consumer Transparency and The Future of Face-Value Resale',
         paragraphs: [
           'Around the world, consumer protection agencies are mandating "all-in pricing" transparency, forcing ticket vendors to display total checkout costs including service fees upfront rather than surprising buyers at the final payment screen.',
           'Artists like The Cure and Robert Smith have taken aggressive stands by enforcing strict face-value-only ticket exchange policies, demonstrating that tours can remain affordable when artists actively limit dynamic pricing tiers.',
@@ -748,12 +820,12 @@ export const ARTICLES: Article[] = [
 
   // 10. How TikTok and Short-Form Videos Are Changing the Music Industry
   {
-    id: 'how-tiktok-short-form-videos-changing-music-industry',
+    id: 'music-industry',
     title: 'How TikTok and Short-Form Videos Are Changing the Music Industry: Structural Shifts',
     subtitle: 'Shorter track runtimes, frontloaded hooks, death of the guitar solo, A&R data scrapers, and the shift from album listening to micro-moment cultural virality.',
     category: 'Industry & Culture',
     vibe: 'Future of Music',
-    readTime: '9 min read',
+    readTime: '13 min read',
     publishedDate: 'October 8, 2026',
     featured: true,
     author: {
@@ -762,7 +834,7 @@ export const ARTICLES: Article[] = [
       avatarInitials: 'MC',
       bio: 'Investigating internet subcultures, music distribution algorithms, and pop songwriting evolution.'
     },
-    coverImage: '/src/assets/images/music_industry_trends_1791631921738.jpg',
+    coverImage: '/images/music_industry_trends_1791631921738.jpg',
     imageCaption: 'Fig. 10 — Content creator and audio engineer collaborating in modern production space with vertical stream monitors.',
     excerpt: 'The music industry is undergoing its most profound structural realignment since the invention of the phonograph. Discover how vertical short-form video has altered song structure, A&R talent discovery, and how artists build lasting careers.',
     keyTrack: {
@@ -807,7 +879,15 @@ export const ARTICLES: Article[] = [
         }
       },
       {
-        heading: 'The Backlash: The Return of Albums and Tactile Vinyl',
+        heading: 'The Disappearance of the Bridge and the Death of the Extended Guitar Solo',
+        paragraphs: [
+          'Traditional song architecture relied on the musical bridge—a contrasting harmonic diversion that provided emotional relief before the final triumphant chorus explosion.',
+          'In modern short-form audio economy, listeners accustomed to 15-second stimulation frequently skip songs during bridge transitions because the familiar hook melody recedes.',
+          'Songwriters are coached in studio sessions to replace bridges with a "second chorus" or an abrasive rhythmic breakdown, accelerating velocity directly into the next high-energy hook.'
+        ]
+      },
+      {
+        heading: 'Cultural Longevity vs. 15-Second Fleeting Fame: The Return to Cohesive Albums',
         paragraphs: [
           'In reaction to disposable 15-second internet audio clips, music culture is currently witnessing an unprecedented renaissance of tactile physical media, deep album storytelling, and immersive live festival culture.',
           'Listeners crave tangible connection. Vinyl record sales recently surpassed digital downloads for the third consecutive year as Gen Z fans purchase vinyl albums to display and experience cohesive musical journeys.',
@@ -841,4 +921,3 @@ export const CATEGORIES = [
   'Industry & Economics',
   'Industry & Culture'
 ];
-

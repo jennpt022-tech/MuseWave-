@@ -2,15 +2,15 @@ import React from 'react';
 import { Bookmark, Search, BookOpen } from 'lucide-react';
 
 interface HeaderProps {
-  currentPage: 'home' | 'blogs' | 'about' | 'saved';
-  setCurrentPage: (page: 'home' | 'blogs' | 'about' | 'saved') => void;
+  currentPath: string;
+  onNavigate: (path: string) => void;
   savedCount: number;
   onOpenSearch: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
-  currentPage,
-  setCurrentPage,
+  currentPath,
+  onNavigate,
   savedCount,
   onOpenSearch,
 }) => {
@@ -20,15 +20,19 @@ export const Header: React.FC<HeaderProps> = ({
         
         {/* Zone 1: Brand Title (Single text element wordmark) */}
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => setCurrentPage('home')}
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate('/');
+            }}
             className="text-left group cursor-pointer focus:outline-none"
             aria-label="MuseWave Homepage"
           >
             <span className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#1A1816] group-hover:text-[#8C3A27] transition-colors">
               MUSEWAVE
             </span>
-          </button>
+          </a>
           <span className="hidden sm:inline-block text-[11px] uppercase tracking-widest text-[#857B70] border-l border-[#DCD5C9] pl-3 py-0.5">
             Music Journal & Blog
           </span>
@@ -36,40 +40,56 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Zone 2: Clean, simple navigation links */}
         <nav className="flex items-center gap-6 sm:gap-8 text-sm font-medium text-[#574F45]">
-          <button
-            onClick={() => setCurrentPage('home')}
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate('/');
+            }}
             className={`hover:text-[#1A1816] transition-colors cursor-pointer py-1 border-b-2 ${
-              currentPage === 'home' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
+              currentPath === '/' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
             }`}
           >
             Home
-          </button>
+          </a>
 
-          <button
-            onClick={() => setCurrentPage('blogs')}
+          <a
+            href="/music-blogs"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate('/music-blogs');
+            }}
             className={`hover:text-[#1A1816] transition-colors cursor-pointer py-1 border-b-2 flex items-center gap-1.5 ${
-              currentPage === 'blogs' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
+              currentPath === '/music-blogs' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
             }`}
           >
             <span>Blog</span>
             <span className="text-[11px] font-mono bg-[#EFE9DF] text-[#8C3A27] font-semibold px-1.5 py-0.2 rounded-xs">
               10
             </span>
-          </button>
+          </a>
 
-          <button
-            onClick={() => setCurrentPage('about')}
+          <a
+            href="/about-musewave"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate('/about-musewave');
+            }}
             className={`hover:text-[#1A1816] transition-colors cursor-pointer py-1 border-b-2 ${
-              currentPage === 'about' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
+              currentPath === '/about-musewave' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
             }`}
           >
             About
-          </button>
+          </a>
 
-          <button
-            onClick={() => setCurrentPage('saved')}
+          <a
+            href="/saved-articles"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate('/saved-articles');
+            }}
             className={`hover:text-[#1A1816] transition-colors cursor-pointer py-1 border-b-2 hidden sm:flex items-center gap-1.5 ${
-              currentPage === 'saved' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
+              currentPath === '/saved-articles' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
             }`}
           >
             <span>Saved</span>
@@ -78,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({
                 {savedCount}
               </span>
             )}
-          </button>
+          </a>
         </nav>
 
         {/* Zone 3: 1-2 primary actions */}
@@ -93,13 +113,17 @@ export const Header: React.FC<HeaderProps> = ({
             <span className="hidden md:inline text-xs text-[#857B70]">Search</span>
           </button>
 
-          <button
-            onClick={() => setCurrentPage('blogs')}
+          <a
+            href="/music-blogs"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate('/music-blogs');
+            }}
             className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white bg-[#1A1816] hover:bg-[#8C3A27] rounded transition-colors cursor-pointer whitespace-nowrap"
           >
             <BookOpen className="w-3.5 h-3.5" />
             <span>Read Blogs</span>
-          </button>
+          </a>
         </div>
 
       </div>

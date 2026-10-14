@@ -61,14 +61,18 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateToBlogs }) => {
       </div>
 
       <div className="pt-8 border-t border-[#E6E0D6] flex justify-center">
-        <button
-          onClick={onNavigateToBlogs}
+        <a
+          href="/music-blogs"
+          onClick={(e) => {
+            e.preventDefault();
+            onNavigateToBlogs();
+          }}
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#1A1816] hover:bg-[#8C3A27] text-white text-xs font-mono uppercase tracking-wider rounded transition-colors cursor-pointer"
         >
           <BookOpen className="w-4 h-4" />
           <span>Explore All 10 Blog Essays</span>
           <ArrowRight className="w-4 h-4" />
-        </button>
+        </a>
       </div>
     </div>
   );

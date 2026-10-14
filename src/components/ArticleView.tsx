@@ -642,8 +642,12 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
         {/* Editorial Next / Prev Navigation */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-10 border-t border-[#E6E0D6]">
           {prevArticle ? (
-            <button
-              onClick={() => onSelectArticle(prevArticle)}
+            <a
+              href={`/${prevArticle.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectArticle(prevArticle);
+              }}
               className="p-4 border border-[#E6E0D6] hover:border-[#8C3A27] text-left transition-colors cursor-pointer group bg-white"
             >
               <span className="text-[10px] font-mono uppercase text-[#857B70] flex items-center gap-1 mb-1">
@@ -653,12 +657,16 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
               <span className="font-serif text-sm font-medium text-[#1A1816] group-hover:text-[#8C3A27] transition-colors line-clamp-1">
                 {prevArticle.title}
               </span>
-            </button>
+            </a>
           ) : <div />}
 
           {nextArticle && (
-            <button
-              onClick={() => onSelectArticle(nextArticle)}
+            <a
+              href={`/${nextArticle.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectArticle(nextArticle);
+              }}
               className="p-4 border border-[#E6E0D6] hover:border-[#8C3A27] text-right transition-colors cursor-pointer group bg-white"
             >
               <span className="text-[10px] font-mono uppercase text-[#857B70] flex items-center justify-end gap-1 mb-1">
@@ -668,7 +676,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
               <span className="font-serif text-sm font-medium text-[#1A1816] group-hover:text-[#8C3A27] transition-colors line-clamp-1">
                 {nextArticle.title}
               </span>
-            </button>
+            </a>
           )}
         </div>
 

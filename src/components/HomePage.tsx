@@ -208,14 +208,18 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
           </div>
 
           {/* Quick jump to dedicated Blog */}
-          <button
-            onClick={onNavigateToBlogs}
+          <a
+            href="/music-blogs"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigateToBlogs();
+            }}
             className="self-start md:self-auto flex items-center gap-2 px-4 py-2.5 bg-[#8C3A27] hover:bg-[#A3432D] text-white text-xs font-mono uppercase tracking-wider rounded-md transition-colors cursor-pointer shrink-0 shadow-md"
           >
             <BookOpen className="w-4 h-4" />
             <span>Read 10 Music Blog Essays</span>
             <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          </a>
         </div>
 
         {/* Live Search Bar (Connects to Real-World Songs and Artists) */}
@@ -840,14 +844,18 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
           </p>
         </div>
 
-        <button
-          onClick={onNavigateToBlogs}
+        <a
+          href="/music-blogs"
+          onClick={(e) => {
+            e.preventDefault();
+            onNavigateToBlogs();
+          }}
           className="px-6 py-3 bg-[#1A1816] hover:bg-[#8C3A27] text-white text-xs font-mono uppercase tracking-wider rounded transition-colors cursor-pointer flex items-center gap-2 shrink-0 shadow-md"
         >
           <BookOpen className="w-4 h-4" />
           <span>Explore All 10 Articles</span>
           <ArrowRight className="w-4 h-4" />
-        </button>
+        </a>
       </section>
 
     </div>

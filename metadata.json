@@ -1,6 +1,6 @@
 {
-  "name": "MuseWave — Music Hub, Lore & Audio Blog",
-  "description": "Stream real-time audio motifs, explore Billboard charts, and read deep-dive essays on internet music culture, shoegaze, breakbeats, 808s, and lofi tape loops.",
+  "name": "Music Journal & Blogs, Artist Hub: Discover Top Sound",
+  "description": "Explore our Music Journal & Blogs, Artist Hub for Billboard charts, verified Spotify audio, and deep music lore. Stream exclusive tracks and master sound now!",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

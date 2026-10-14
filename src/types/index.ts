@@ -51,6 +51,9 @@ export interface Article {
     year: string;
     label: string;
   }[];
+  seoTitle?: string;
+  metaDescription?: string;
+  urlPath?: string;
 }
 
 export interface Comment {
