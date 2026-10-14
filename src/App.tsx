@@ -84,15 +84,33 @@ export default function App() {
 
   // Route resolution & SEO application
   const resolveRoute = useCallback((path: string, updateHistory = false) => {
-    const normalized = path.replace(/\/+$/, '') || '/';
+    // 1. Sanitize incoming path by removing trailing slashes, 9ams, random digits, and double hyphens
+    const rawClean = path.toLowerCase().trim();
+    const stripped = rawClean
+      .replace(/\/+$/, '')
+      .replace(/9ams?/g, '')
+      .replace(/[0-9]+/g, '')
+      .replace(/-+/g, '-')
+      .replace(/\/-/, '/')
+      .replace(/-\//, '/') || '/';
+
+    const normalized = stripped.replace(/\/+$/, '') || '/';
     const cleanSlug = normalized.replace(/^\//, '');
 
-    // 1. Check if path corresponds to an article slug (or backward compatible slug)
+    // 2. Check if path corresponds to an article slug (or backward compatible slug)
     const matchedArticle = ARTICLES.find(a => {
       if (a.id === cleanSlug) return true;
-      if (cleanSlug === 'best-songs-driving-gaming-studying' && a.id === 'best-songs-driving-studying') return true;
-      if (cleanSlug === 'ai-music-generation-copyright-laws' && a.id === 'ai-music-copyright-laws') return true;
-      if (cleanSlug === 'dynamic-ticket-pricing' && a.id === 'concert-ticket-prices') return true;
+      // Handle legacy or alias slugs containing 'gaming' or 'dynamic' or 'generation'
+      if ((cleanSlug.includes('driving') && cleanSlug.includes('studying')) && a.id === 'best-songs-driving-studying') return true;
+      if (cleanSlug.includes('copyright') && a.id === 'ai-music-copyright-laws') return true;
+      if ((cleanSlug.includes('ticket') || cleanSlug.includes('concert')) && a.id === 'concert-ticket-prices') return true;
+      if (cleanSlug.includes('vocal-warm') && a.id === 'singing-vocal-warm-up-exercises') return true;
+      if (cleanSlug.includes('acoustic-guitar') && a.id === 'acoustic-guitar-for-beginners') return true;
+      if (cleanSlug.includes('audition') && a.id === 'songs-for-auditions') return true;
+      if (cleanSlug.includes('trending') && a.id === 'trending-songs') return true;
+      if (cleanSlug.includes('writing') && a.id === 'song-writing-techniques') return true;
+      if (cleanSlug.includes('studying') && a.id === 'music-for-studying') return true;
+      if (cleanSlug.includes('industry') && a.id === 'music-industry') return true;
       return false;
     });
 
@@ -100,8 +118,13 @@ export default function App() {
       const canonicalPath = `/${matchedArticle.id}`;
       setSelectedArticle(matchedArticle);
       setCurrentPath(canonicalPath);
-      if (updateHistory || window.location.pathname !== canonicalPath) {
-        window.history.pushState(null, '', canonicalPath);
+      // Clean up URL in address bar if it had 9ams, numbers, or old slug
+      if (typeof window !== 'undefined' && window.location.pathname !== canonicalPath) {
+        if (updateHistory) {
+          window.history.pushState(null, '', canonicalPath);
+        } else {
+          window.history.replaceState(null, '', canonicalPath);
+        }
       }
       const seo = ARTICLE_SEO_CONFIGS[matchedArticle.id] || {
         title: `${matchedArticle.title} | MuseWave`,
@@ -117,14 +140,18 @@ export default function App() {
       return;
     }
 
-    // 2. Static Pages
+    // 3. Static Pages
     setSelectedArticle(null);
 
-    if (normalized === '/blogs' || normalized === '/music-blogs') {
+    if (normalized === '/blogs' || normalized.includes('blog')) {
       setCurrentPage('blogs');
       setCurrentPath('/blogs');
-      if (updateHistory || window.location.pathname !== '/blogs') {
-        window.history.pushState(null, '', '/blogs');
+      if (typeof window !== 'undefined' && window.location.pathname !== '/blogs') {
+        if (updateHistory) {
+          window.history.pushState(null, '', '/blogs');
+        } else {
+          window.history.replaceState(null, '', '/blogs');
+        }
       }
       const seo = STATIC_PAGES_SEO['/blogs'];
       applyPageSeo({
@@ -132,11 +159,15 @@ export default function App() {
         description: seo.description,
         canonicalPath: '/blogs',
       });
-    } else if (normalized === '/about' || normalized === '/about-musewave') {
+    } else if (normalized === '/about' || normalized.includes('about')) {
       setCurrentPage('about');
       setCurrentPath('/about');
-      if (updateHistory || window.location.pathname !== '/about') {
-        window.history.pushState(null, '', '/about');
+      if (typeof window !== 'undefined' && window.location.pathname !== '/about') {
+        if (updateHistory) {
+          window.history.pushState(null, '', '/about');
+        } else {
+          window.history.replaceState(null, '', '/about');
+        }
       }
       const seo = STATIC_PAGES_SEO['/about'];
       applyPageSeo({
@@ -144,11 +175,15 @@ export default function App() {
         description: seo.description,
         canonicalPath: '/about',
       });
-    } else if (normalized === '/saved' || normalized === '/saved-articles') {
+    } else if (normalized === '/saved' || normalized.includes('saved')) {
       setCurrentPage('saved');
       setCurrentPath('/saved');
-      if (updateHistory || window.location.pathname !== '/saved') {
-        window.history.pushState(null, '', '/saved');
+      if (typeof window !== 'undefined' && window.location.pathname !== '/saved') {
+        if (updateHistory) {
+          window.history.pushState(null, '', '/saved');
+        } else {
+          window.history.replaceState(null, '', '/saved');
+        }
       }
       const seo = STATIC_PAGES_SEO['/saved'];
       applyPageSeo({
@@ -160,8 +195,12 @@ export default function App() {
       // Home default
       setCurrentPage('home');
       setCurrentPath('/');
-      if (updateHistory && window.location.pathname !== '/') {
-        window.history.pushState(null, '', '/');
+      if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+        if (updateHistory) {
+          window.history.pushState(null, '', '/');
+        } else {
+          window.history.replaceState(null, '', '/');
+        }
       }
       const seo = STATIC_PAGES_SEO['/'];
       applyPageSeo({
