@@ -84,12 +84,14 @@ export default function App() {
 
   // Route resolution & SEO application
   const resolveRoute = useCallback((path: string, updateHistory = false) => {
-    // 1. Sanitize incoming path by removing trailing slashes, 9ams, random digits, and double hyphens
-    const rawClean = path.toLowerCase().trim();
+    // 1. Sanitize incoming path: strip query parameters, hashtags, symbols, and numbers
+    const cleanPath = (path || '').split('?')[0].split('#')[0];
+    const rawClean = cleanPath.toLowerCase().trim();
     const stripped = rawClean
       .replace(/\/+$/, '')
+      .replace(/[^a-z0-9\/-]/g, '') // remove all symbols except slashes and hyphens
       .replace(/9ams?/g, '')
-      .replace(/[0-9]+/g, '')
+      .replace(/[0-9]+/g, '') // strictly NO numbers
       .replace(/-+/g, '-')
       .replace(/\/-/, '/')
       .replace(/-\//, '/') || '/';
@@ -118,8 +120,8 @@ export default function App() {
       const canonicalPath = `/${matchedArticle.id}`;
       setSelectedArticle(matchedArticle);
       setCurrentPath(canonicalPath);
-      // Clean up URL in address bar if it had 9ams, numbers, or old slug
-      if (typeof window !== 'undefined' && window.location.pathname !== canonicalPath) {
+      // Clean up URL in address bar if it had numbers, symbols, hashtags, or query parameters
+      if (typeof window !== 'undefined' && (window.location.pathname !== canonicalPath || window.location.search || window.location.hash)) {
         if (updateHistory) {
           window.history.pushState(null, '', canonicalPath);
         } else {
@@ -146,7 +148,7 @@ export default function App() {
     if (normalized === '/blogs' || normalized.includes('blog')) {
       setCurrentPage('blogs');
       setCurrentPath('/blogs');
-      if (typeof window !== 'undefined' && window.location.pathname !== '/blogs') {
+      if (typeof window !== 'undefined' && (window.location.pathname !== '/blogs' || window.location.search || window.location.hash)) {
         if (updateHistory) {
           window.history.pushState(null, '', '/blogs');
         } else {
@@ -162,7 +164,7 @@ export default function App() {
     } else if (normalized === '/about' || normalized.includes('about')) {
       setCurrentPage('about');
       setCurrentPath('/about');
-      if (typeof window !== 'undefined' && window.location.pathname !== '/about') {
+      if (typeof window !== 'undefined' && (window.location.pathname !== '/about' || window.location.search || window.location.hash)) {
         if (updateHistory) {
           window.history.pushState(null, '', '/about');
         } else {
@@ -178,7 +180,7 @@ export default function App() {
     } else if (normalized === '/saved' || normalized.includes('saved')) {
       setCurrentPage('saved');
       setCurrentPath('/saved');
-      if (typeof window !== 'undefined' && window.location.pathname !== '/saved') {
+      if (typeof window !== 'undefined' && (window.location.pathname !== '/saved' || window.location.search || window.location.hash)) {
         if (updateHistory) {
           window.history.pushState(null, '', '/saved');
         } else {
@@ -195,7 +197,7 @@ export default function App() {
       // Home default
       setCurrentPage('home');
       setCurrentPath('/');
-      if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+      if (typeof window !== 'undefined' && (window.location.pathname !== '/' || window.location.search || window.location.hash)) {
         if (updateHistory) {
           window.history.pushState(null, '', '/');
         } else {
