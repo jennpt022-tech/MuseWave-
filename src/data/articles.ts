@@ -18,6 +18,7 @@ export const ARTICLES: Article[] = [
       bio: 'Investigating psychoacoustics, rhythm entrainment, and cognitive performance audio.'
     },
     coverImage: '/images/driving-focus-study.jpg',
+    imageAlt: 'Modern focus music workstation with headphones, synthesizer, and ambient lighting for studying, driving, and gaming',
     imageCaption: 'Fig. 1 — Creative focus music workstation merging high-tempo digital gaming audio with late-night driving nightscapes and deep study ambient tones.',
     excerpt: 'Different cognitive tasks demand vastly different soundwaves. Discover the best songs for focus, why instrumental focus music boosts working memory, and how to build the perfect study playlist for long driving or gaming sessions.',
     keyTrack: {
@@ -93,13 +94,13 @@ export const ARTICLES: Article[] = [
       {
         title: 'Vocal Warm Up Exercises for Mental Grounding',
         url: '/singing-vocal-warm-up-exercises',
-        anchorText: 'Explore our guide on vocal warm up exercises to release performance tension',
+        anchorText: 'Read our complete guide on singing vocal warm-up exercises',
         description: 'Learn how vocal cord vibration exercises ease neuromuscular stress before long study and driving sessions.'
       },
       {
         title: 'Beginner Acoustic Guitar Lessons',
         url: '/acoustic-guitar-beginners-guide',
-        anchorText: 'Read our beginner guitar lessons on acoustic guitar chords for mindful practice',
+        anchorText: 'Read our beginner guide to acoustic guitar chords and lessons',
         description: 'Take tactile musical breaks from screens by mastering 4 essential open acoustic guitar chords.'
       }
     ],
@@ -128,6 +129,7 @@ export const ARTICLES: Article[] = [
       bio: 'Training Grammy-nominated touring vocalists and theater performers across contemporary and classical styles.'
     },
     coverImage: '/images/vocal-warmup-singer.jpg',
+    imageAlt: 'Vocal warm-up exercises sheet music and studio condenser microphone setup for daily singing warmups',
     imageCaption: 'Fig. 2 — Studio condenser microphone setup with vocal pitch registers and daily vocal warm up exercises sheet music.',
     excerpt: 'Singing without structured daily vocal exercises is the athletic equivalent of sprinting on cold muscles. Discover essential vocal warm up exercises and singing warmups that protect vocal folds, smooth your break, and unlock effortless range.',
     keyTrack: {
@@ -197,19 +199,19 @@ export const ARTICLES: Article[] = [
       {
         title: 'Top 10 Songs for Auditions',
         url: '/songs-for-auditions-top-vocal-tracks',
-        anchorText: 'Discover the top 10 songs for auditions to showcase your dynamic vocal range',
+        anchorText: 'Read our complete guide on songs for auditions to showcase dynamic range',
         description: 'Apply your warm-up techniques to audition songs selected specifically for Broadway and pop casting directors.'
       },
       {
         title: 'Songs for Focus and Vocal Performance Routine',
         url: '/best-songs-for-driving-studying-gaming',
-        anchorText: 'Explore our focus music and study playlist guide for backstage mental preparation',
+        anchorText: 'Explore our curated songs for focus and study playlists for concentration',
         description: 'How steady 80 BPM instrumental study playlists calm stage fright and optimize respiratory focus.'
       },
       {
         title: 'Song Writing Techniques for Lyric Phrasing',
         url: '/song-writing-techniques',
-        anchorText: 'Read our guide on song writing techniques and vowel-friendly lyric writing',
+        anchorText: 'Learn 7 pro song writing techniques for chart-topping lyrics and hooks',
         description: 'Structure lyrics that complement vocal ergonomics and open up resonant vowel formants.'
       }
     ],
@@ -237,6 +239,7 @@ export const ARTICLES: Article[] = [
       bio: 'Guiding thousands of new guitarists through acoustic fundamentals and instrument setup.'
     },
     coverImage: '/images/acoustic-guitar-guide.jpg',
+    imageAlt: 'Person practicing acoustic guitar chords with correct posture and fretboard finger positioning for beginners',
     imageCaption: 'Fig. 3 — Handcrafted acoustic guitar with foundational acoustic guitar chords diagrams and brass plectrum in studio sunlight.',
     excerpt: 'Picking up an acoustic guitar for beginners is thrilling, but sore fingertips and muffled buzz cause 90% of beginners to quit. Master these beginner guitar lessons to play acoustic guitar chords and complete songs in your very first week.',
     keyTrack: {
@@ -306,19 +309,19 @@ export const ARTICLES: Article[] = [
       {
         title: 'Song Writing Techniques',
         url: '/song-writing-techniques',
-        anchorText: 'Learn how to write song lyrics around open acoustic guitar chords',
+        anchorText: 'Learn 7 pro song writing techniques for chart-topping lyrics and hooks',
         description: 'Turn standard 4-chord guitar progressions into compelling original songs with sensory lyrical imagery.'
       },
       {
         title: 'Vocal Warm Up Exercises for Acoustic Singer-Songwriters',
         url: '/singing-vocal-warm-up-exercises',
-        anchorText: 'Practice daily vocal warm up exercises to sing along with acoustic guitar',
+        anchorText: 'Read our complete guide on singing vocal warm-up exercises',
         description: 'Build breath stamina and vocal pitch precision so you can sing effortlessly while strumming.'
       },
       {
         title: 'Songs for Focus and Daily Practice Routines',
         url: '/best-songs-for-driving-studying-gaming',
-        anchorText: 'Check out our curated songs for focus and study playlists for focused practice',
+        anchorText: 'Explore our curated songs for focus and study playlists for concentration',
         description: 'Use tempo entrainment audio to build steady metronome timing during guitar drills.'
       }
     ],
@@ -347,6 +350,7 @@ export const ARTICLES: Article[] = [
       bio: 'Adjudicating professional conservatory auditions and West End theater casting calls.'
     },
     coverImage: '/images/vocal-audition-stage.jpg',
+    imageAlt: 'Singer performing songs for auditions on stage under spotlight to showcase dynamic vocal range',
     imageCaption: 'Fig. 4 — Spotlight cutting across empty auditorium audition stage with center dynamic vocal microphone.',
     excerpt: 'Walk into your next singing audition with unbreakable confidence. Casting panels make up their minds in the first 16 bars. Here are the 10 greatest songs to highlight your technical control, emotional vulnerability, and authentic vocal color.',
     keyTrack: {
@@ -418,19 +422,19 @@ export const ARTICLES: Article[] = [
       {
         title: 'Vocal Warm Up Exercises for Singers',
         url: '/singing-vocal-warm-up-exercises',
-        anchorText: 'Explore our vocal warm up exercises for singers before your audition',
+        anchorText: 'Read our complete guide on singing vocal warm-up exercises',
         description: 'Prepare your vocal cords with 15 minutes of semi-occluded singing warmups before stepping into the room.'
       },
       {
         title: 'Songs for Focus and Backstage Composure',
         url: '/best-songs-for-driving-studying-gaming',
-        anchorText: 'Read our guide on songs for focus and study playlists for audition focus',
+        anchorText: 'Explore our curated songs for focus and study playlists for concentration',
         description: 'Use steady tempo entrainment to manage performance adrenaline and calm your heart rate backstage.'
       },
       {
         title: 'Beginner Acoustic Guitar Lessons',
         url: '/acoustic-guitar-beginners-guide',
-        anchorText: 'Read our beginner guitar lessons on acoustic guitar chords',
+        anchorText: 'Read our beginner guide to acoustic guitar chords and lessons',
         description: 'Accompany yourself on auditions by mastering fundamental 4-chord open acoustic guitar shapes.'
       }
     ],
@@ -459,6 +463,7 @@ export const ARTICLES: Article[] = [
       bio: 'Analyzing algorithmic audio distribution and short-form social music trends for major labels.'
     },
     coverImage: '/images/viral-tiktok-music.jpg',
+    imageAlt: 'Smartphone screen showing viral trending songs on TikTok with social audio soundwave analytics',
     imageCaption: 'Fig. 5 — Sound waveform analytics and short-form video engagement metrics on creator studio workstation.',
     excerpt: 'Virality is no longer an accidental stroke of luck; it is an engineered science of auditory dopamine. Learn how modern producers construct 10-second micro-hooks designed specifically for TikTok choreography, speed-up culture, and algorithm loops.',
     keyTrack: {
@@ -528,19 +533,19 @@ export const ARTICLES: Article[] = [
       {
         title: 'Modern Music Industry Revolution',
         url: '/music-industry-revolution',
-        anchorText: 'Read our analysis of how TikTok reshapes the modern music industry',
+        anchorText: 'Read our report on how the music industry revolution is reshaped by short-form video',
         description: 'See how short-form video alters the music industry, transforming A&R scouting and song runtimes.'
       },
       {
         title: '7 Pro Song Writing Techniques',
         url: '/song-writing-techniques',
-        anchorText: 'Learn 7 pro song writing techniques for chart-topping hooks',
+        anchorText: 'Learn 7 pro song writing techniques for chart-topping lyrics and hooks',
         description: 'Write irresistible hooks with sensory imagery and conversational rhythm that stick in listeners’ heads.'
       },
       {
         title: 'AI Music Copyright and Ownership Laws',
         url: '/ai-music-copyright-laws',
-        anchorText: 'Explore our breakdown of AI music generation and copyright laws',
+        anchorText: 'Explore our legal breakdown of AI music generation and copyright laws',
         description: 'Understand the intellectual property questions surrounding viral AI voice clones and mashups.'
       }
     ],
@@ -569,6 +574,7 @@ export const ARTICLES: Article[] = [
       bio: 'Publishing work on narrative songwriting mechanics, prosody, and emotional rhetoric.'
     },
     coverImage: '/images/songwriting-lyrics-desk.jpg',
+    imageAlt: 'Songwriter handwritten lyric notebook and acoustic guitar on vintage desk for song writing techniques',
     imageCaption: 'Fig. 6 — Lyric notebook with rhyming schemes, meter annotations, and acoustic guitar at creative writing desk.',
     excerpt: 'Great lyrics do not tell listeners what to feel; they place listeners inside the room with vivid, tangible details. Unpack 7 battle-tested lyric writing techniques that transform vague poetry into emotionally resonant songs.',
     keyTrack: {
@@ -642,19 +648,19 @@ export const ARTICLES: Article[] = [
       {
         title: 'Beginner Acoustic Guitar Lessons',
         url: '/acoustic-guitar-beginners-guide',
-        anchorText: 'Pair your lyrics with beginner guitar lessons on acoustic guitar chords',
+        anchorText: 'Read our beginner guide to acoustic guitar chords and lessons',
         description: 'Learn open acoustic guitar chords to build melodic progressions beneath your lyrics.'
       },
       {
         title: 'Vocal Warm Up Exercises for Songwriters',
         url: '/singing-vocal-warm-up-exercises',
-        anchorText: 'Warm up your singing voice with daily vocal warm up exercises',
+        anchorText: 'Read our complete guide on singing vocal warm-up exercises',
         description: 'Sing your new melodies with confidence using safe semi-occluded singing warmups.'
       },
       {
         title: 'Focus Music Playlists for Creative Flow',
         url: '/best-songs-for-driving-studying-gaming',
-        anchorText: 'Explore our curated songs for focus and focus music playlists for songwriting flow',
+        anchorText: 'Explore our curated songs for focus and study playlists for concentration',
         description: 'Maintain deep creative focus during lyric-writing sessions with lyric-free background soundscapes.'
       }
     ],
@@ -683,6 +689,7 @@ export const ARTICLES: Article[] = [
       bio: 'Researching binaural frequency stimulation, stochastic noise, and workplace cognitive productivity.'
     },
     coverImage: '/images/lofi-beats-study.jpg',
+    imageAlt: 'Student wearing headphones listening to lofi music for studying and ambient beats at wooden desk',
     imageCaption: 'Fig. 7 — Cozy study desk by rain-streaked window with vintage cassette deck, notebook, and headphones.',
     excerpt: 'Millions of students swear by 24/7 Lofi Girl study streams, while neurodivergent workers turn to deep rumble brown noise. Examine peer-reviewed neurobiology to understand which sound profile optimizes your brain.',
     keyTrack: {
@@ -752,19 +759,19 @@ export const ARTICLES: Article[] = [
       {
         title: 'Songs for Focus and Driving Playlists',
         url: '/best-songs-for-driving-studying-gaming',
-        anchorText: 'Read our comprehensive guide to songs for focus and driving study playlists',
+        anchorText: 'Explore our curated songs for focus and study playlists for concentration',
         description: 'Explore optimal 70-85 BPM focus music that prevents cognitive overload.'
       },
       {
         title: 'Beginner Acoustic Guitar Lessons',
         url: '/acoustic-guitar-beginners-guide',
-        anchorText: 'Learn acoustic guitar chords for beginners during study breaks',
+        anchorText: 'Read our beginner guide to acoustic guitar chords and lessons',
         description: 'Take mindful acoustic breaks with foundational 4-chord progressions.'
       },
       {
         title: 'Daily Singing Warmups and Vocal Exercises',
         url: '/singing-vocal-warm-up-exercises',
-        anchorText: 'Explore our daily singing warmups and vocal exercises',
+        anchorText: 'Read our complete guide on singing vocal warm-up exercises',
         description: 'Release vocal cord strain and tension with semi-occluded warmups.'
       }
     ],
@@ -793,6 +800,7 @@ export const ARTICLES: Article[] = [
       bio: 'Advising recording artists, publishers, and AI audio startups on digital copyright and licensing compliance.'
     },
     coverImage: '/images/ai-music-copyright.jpg',
+    imageAlt: 'Digital soundwave frequencies and legal gavel representing AI music generation and intellectual property copyright laws',
     imageCaption: 'Fig. 8 — Scales of justice balanced beside algorithmic audio neural network visualizers in mixing suite.',
     excerpt: 'Can you legally copyright a song generated with Suno or Udio? Is cloning an artist’s vocal timbre illegal? Explore the landmark copyright rulings and right-of-publicity statutes reshaping music intellectual property.',
     keyTrack: {
@@ -862,13 +870,13 @@ export const ARTICLES: Article[] = [
       {
         title: 'Modern Music Industry Evolution',
         url: '/music-industry-revolution',
-        anchorText: 'Read our analysis of short-form audio trends across the music industry',
+        anchorText: 'Read our report on how the music industry revolution is reshaped by short-form video',
         description: 'Understand how A&R automated analytics evaluate streaming data.'
       },
       {
         title: 'Trending Songs on TikTok',
         url: '/trending-songs-on-tiktok',
-        anchorText: 'Learn how songs go viral on TikTok through algorithmic hooks',
+        anchorText: 'Read our breakdown of trending songs on TikTok and viral algorithms',
         description: 'Examine the 10-second audio loop structures that spark social trends.'
       },
       {
@@ -903,6 +911,7 @@ export const ARTICLES: Article[] = [
       bio: 'Analyzing touring logistics, ticketing algorithms, and antitrust live music policy.'
     },
     coverImage: '/images/concert-stadium-crowd.jpg',
+    imageAlt: 'Packed stadium arena concert crowd with stage lights reflecting dynamic concert ticket prices',
     imageCaption: 'Fig. 9 — Sold-out stadium arena illuminated by tens of thousands of smartphones and stage pyrotechnics.',
     excerpt: 'Fans logging into ticket presales regularly face $600 price tags for nosebleed seats. Unpack the interlocking economic forces—from algorithmic surge pricing to touring inflation—that transformed live concerts into luxury commodities.',
     keyTrack: {
@@ -972,13 +981,13 @@ export const ARTICLES: Article[] = [
       {
         title: 'Music Industry and Streaming Realignment',
         url: '/music-industry-revolution',
-        anchorText: 'Read our in-depth report on how streaming alters the music industry',
+        anchorText: 'Read our report on how the music industry revolution is reshaped by short-form video',
         description: 'Explore the shift in musician income from streaming to live stadium touring.'
       },
       {
         title: 'Top 10 Songs for Auditions',
         url: '/songs-for-auditions-top-vocal-tracks',
-        anchorText: 'Discover the top 10 songs for auditions to showcase dynamic range live',
+        anchorText: 'Read our complete guide on songs for auditions to showcase dynamic range',
         description: 'Select vocal audition tracks that demonstrate pitch control and emotion.'
       },
       {
@@ -1013,6 +1022,7 @@ export const ARTICLES: Article[] = [
       bio: 'Investigating internet subcultures, music distribution algorithms, and pop songwriting evolution.'
     },
     coverImage: '/images/music-industry-trends.jpg',
+    imageAlt: 'Sound engineer adjusting mixing console sliders illustrating modern music industry and streaming revolution',
     imageCaption: 'Fig. 10 — Content creator and audio engineer collaborating in modern production space with vertical stream monitors.',
     excerpt: 'The music industry is undergoing its most profound structural realignment since the invention of the phonograph. Discover how vertical short-form video has altered song structure, A&R talent discovery, and how artists build lasting careers.',
     keyTrack: {
@@ -1082,19 +1092,19 @@ export const ARTICLES: Article[] = [
       {
         title: 'Trending Songs on TikTok',
         url: '/trending-songs-on-tiktok',
-        anchorText: 'Analyze how trending songs on TikTok reverse-engineer viral algorithms',
+        anchorText: 'Read our breakdown of trending songs on TikTok and viral algorithms',
         description: 'Learn how micro-hooks and nightcore speedups capture FYP attention.'
       },
       {
         title: 'Dynamic Concert Ticket Pricing',
         url: '/concert-ticket-prices',
-        anchorText: 'Read our breakdown of dynamic concert ticket prices and venue fees',
+        anchorText: 'Discover why live concert ticket prices are soaring with dynamic pricing',
         description: 'Why live touring became the primary profit center for modern musicians.'
       },
       {
         title: 'AI Music Copyright Laws',
         url: '/ai-music-copyright-laws',
-        anchorText: 'Explore legal rights and AI music generation copyright laws',
+        anchorText: 'Explore our legal breakdown of AI music generation and copyright laws',
         description: 'Examine voice cloning legislation and digital replica protection.'
       }
     ],

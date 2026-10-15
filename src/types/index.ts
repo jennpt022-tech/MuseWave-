@@ -40,6 +40,7 @@ export interface Article {
   featured: boolean;
   author: Author;
   coverImage: string;
+  imageAlt?: string;
   imageCaption: string;
   excerpt: string;
   keyTrack: KeyTrack;

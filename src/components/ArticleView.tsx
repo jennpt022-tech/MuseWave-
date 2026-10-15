@@ -334,7 +334,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           <div className="aspect-[16/9] overflow-hidden border border-[#D9D0C3] bg-[#EAE2D5]">
             <img
               src={article.coverImage}
-              alt={`${article.title} — Primary artwork and sound visualization: ${article.imageCaption || article.subtitle}`}
+              alt={article.imageAlt || `${article.title} — Primary artwork and sound visualization: ${article.imageCaption || article.subtitle}`}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
             />

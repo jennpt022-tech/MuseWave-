@@ -36,7 +36,7 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
           <div className="relative group overflow-hidden bg-[#EAE3D6] aspect-[16/9] border border-[#DDD5C7]">
             <img
               src={leadArticle.coverImage}
-              alt={`${leadArticle.title} — Lead editorial cover photograph: ${leadArticle.imageCaption || leadArticle.subtitle}`}
+              alt={leadArticle.imageAlt || `${leadArticle.title} — Lead editorial cover photograph: ${leadArticle.imageCaption || leadArticle.subtitle}`}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover grayscale-[15%] group-hover:scale-[1.01] transition-transform duration-700 ease-out"
             />
@@ -144,7 +144,7 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
                     <div className="w-28 sm:w-36 aspect-[4/3] shrink-0 bg-[#EAE3D6] overflow-hidden border border-[#DDD5C7]">
                       <img
                         src={article.coverImage}
-                        alt={`${article.title} — ${article.category} featured editorial image: ${article.imageCaption || article.subtitle}`}
+                        alt={article.imageAlt || `${article.title} — ${article.category} featured editorial image: ${article.imageCaption || article.subtitle}`}
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />

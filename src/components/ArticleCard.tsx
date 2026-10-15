@@ -29,7 +29,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         {!imgError ? (
           <img
             src={article.coverImage}
-            alt={`${article.title} — ${article.category} editorial photography: ${article.imageCaption || article.subtitle}`}
+            alt={article.imageAlt || `${article.title} — ${article.category} editorial photography: ${article.imageCaption || article.subtitle}`}
             onError={() => setImgError(true)}
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ease-out"

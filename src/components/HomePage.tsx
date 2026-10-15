@@ -863,9 +863,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs, onSelectA
                   }
                 }}
                 className="text-xs font-semibold text-[#8C3A27] hover:underline flex items-center gap-1"
-                aria-label="Explore our complete guide on daily vocal warm up exercises for singers"
+                aria-label="Read our complete guide on singing vocal warm-up exercises"
               >
-                <span>Explore our complete guide on daily vocal warm up exercises for singers</span>
+                <span>Read our complete guide on singing vocal warm-up exercises</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
