@@ -767,13 +767,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs, onSelectA
             </div>
             <div className="pt-2 border-t border-[#F0EBE1]">
               <a
-                href="/songs-for-focus"
+                href="/best-songs-for-driving-studying-gaming"
                 onClick={(e) => {
                   e.preventDefault();
-                  const target = ARTICLES.find(a => a.id === 'songs-for-focus');
+                  const target = ARTICLES.find(a => a.id === 'best-songs-for-driving-studying-gaming');
                   if (target) {
                     if (onSelectArticle) onSelectArticle(target);
-                    else window.location.pathname = '/songs-for-focus';
+                    else window.location.pathname = '/best-songs-for-driving-studying-gaming';
                   }
                 }}
                 className="text-xs font-semibold text-[#8C3A27] hover:underline flex items-center gap-1"
@@ -810,13 +810,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs, onSelectA
             </div>
             <div className="pt-2 border-t border-[#F0EBE1]">
               <a
-                href="/trending-songs"
+                href="/trending-songs-on-tiktok"
                 onClick={(e) => {
                   e.preventDefault();
-                  const target = ARTICLES.find(a => a.id === 'trending-songs');
+                  const target = ARTICLES.find(a => a.id === 'trending-songs-on-tiktok');
                   if (target) {
                     if (onSelectArticle) onSelectArticle(target);
-                    else window.location.pathname = '/trending-songs';
+                    else window.location.pathname = '/trending-songs-on-tiktok';
                   }
                 }}
                 className="text-xs font-semibold text-[#8C3A27] hover:underline flex items-center gap-1"
@@ -853,13 +853,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs, onSelectA
             </div>
             <div className="pt-2 border-t border-[#F0EBE1]">
               <a
-                href="/vocal-warm-up-exercises"
+                href="/singing-vocal-warm-up-exercises"
                 onClick={(e) => {
                   e.preventDefault();
-                  const target = ARTICLES.find(a => a.id === 'vocal-warm-up-exercises');
+                  const target = ARTICLES.find(a => a.id === 'singing-vocal-warm-up-exercises');
                   if (target) {
                     if (onSelectArticle) onSelectArticle(target);
-                    else window.location.pathname = '/vocal-warm-up-exercises';
+                    else window.location.pathname = '/singing-vocal-warm-up-exercises';
                   }
                 }}
                 className="text-xs font-semibold text-[#8C3A27] hover:underline flex items-center gap-1"
@@ -896,13 +896,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs, onSelectA
             </div>
             <div className="pt-2 border-t border-[#F0EBE1]">
               <a
-                href="/acoustic-guitar-for-beginners"
+                href="/acoustic-guitar-beginners-guide"
                 onClick={(e) => {
                   e.preventDefault();
-                  const target = ARTICLES.find(a => a.id === 'acoustic-guitar-for-beginners');
+                  const target = ARTICLES.find(a => a.id === 'acoustic-guitar-beginners-guide');
                   if (target) {
                     if (onSelectArticle) onSelectArticle(target);
-                    else window.location.pathname = '/acoustic-guitar-for-beginners';
+                    else window.location.pathname = '/acoustic-guitar-beginners-guide';
                   }
                 }}
                 className="text-xs font-semibold text-[#8C3A27] hover:underline flex items-center gap-1"

@@ -51,44 +51,32 @@ export const STATIC_PAGES_SEO: Record<string, PageSeoConfig> = {
 };
 
 export const ARTICLE_SEO_CONFIGS: Record<string, PageSeoConfig> = {
-  'songs-for-focus': {
-    path: '/songs-for-focus',
+  'best-songs-for-driving-studying-gaming': {
+    path: '/best-songs-for-driving-studying-gaming',
     title: 'Songs for Focus: Focus Music and Study Playlist for Driving & Gaming',
     description: 'Discover the best songs for focus while driving, gaming, and studying backed by neuroscience. Stream curated focus music and study playlist tracks today.',
     targetKeyword: 'songs for focus',
-  },
-  'best-songs-driving-studying': {
-    path: '/songs-for-focus',
-    title: 'Songs for Focus: Focus Music and Study Playlist for Driving & Gaming',
-    description: 'Discover the best songs for focus while driving, gaming, and studying backed by neuroscience. Stream curated focus music and study playlist tracks today.',
-    targetKeyword: 'songs for focus',
-  },
-  'vocal-warm-up-exercises': {
-    path: '/vocal-warm-up-exercises',
-    title: 'Vocal Warm Up Exercises: Daily Singing Warmups & Vocal Exercises',
-    description: 'Master essential vocal warm up exercises to protect vocal folds, smooth your break, and expand range. Learn daily vocal exercises and singing warmups today.',
-    targetKeyword: 'vocal warm up exercises',
   },
   'singing-vocal-warm-up-exercises': {
-    path: '/vocal-warm-up-exercises',
+    path: '/singing-vocal-warm-up-exercises',
     title: 'Vocal Warm Up Exercises: Daily Singing Warmups & Vocal Exercises',
     description: 'Master essential vocal warm up exercises to protect vocal folds, smooth your break, and expand range. Learn daily vocal exercises and singing warmups today.',
     targetKeyword: 'vocal warm up exercises',
   },
-  'acoustic-guitar-for-beginners': {
-    path: '/acoustic-guitar-for-beginners',
+  'acoustic-guitar-beginners-guide': {
+    path: '/acoustic-guitar-beginners-guide',
     title: 'Acoustic Guitar for Beginners: Acoustic Guitar Chords & Lessons',
     description: 'Learn acoustic guitar for beginners with step-by-step beginner guitar lessons, acoustic guitar chords, and fingerpicking tips. Start playing guitar today.',
     targetKeyword: 'Acoustic guitar for beginners',
   },
-  'songs-for-auditions': {
-    path: '/songs-for-auditions',
+  'songs-for-auditions-top-vocal-tracks': {
+    path: '/songs-for-auditions-top-vocal-tracks',
     title: 'Songs for Auditions: Top 10 Vocal Tracks to Wow Judges',
     description: 'Select the perfect Songs for Auditions across pop, theatre, and R&B to showcase dynamic vocal control. Impress casting directors and book your role today!',
     targetKeyword: 'Songs for Auditions',
   },
-  'trending-songs': {
-    path: '/trending-songs',
+  'trending-songs-on-tiktok': {
+    path: '/trending-songs-on-tiktok',
     title: 'Trending Songs on TikTok: How Tracks Go Viral Overnight',
     description: 'Learn why Trending Songs conquer TikTok and social algorithms through hook design, dance challenges, and meme audio loops. Discover viral hit formulas today!',
     targetKeyword: 'Trending Songs',
@@ -117,16 +105,58 @@ export const ARTICLE_SEO_CONFIGS: Record<string, PageSeoConfig> = {
     description: 'Analyze Dynamic ticket pricing algorithms, monopoly ticketing fees, and secondary scalper bots driving live concert prices sky high. Beat surge pricing today!',
     targetKeyword: 'Dynamic ticket pricing',
   },
-  'music-industry': {
-    path: '/music-industry',
+  'music-industry-revolution': {
+    path: '/music-industry-revolution',
     title: 'Music Industry Revolution: How TikTok Alters Global Hits',
     description: 'See how short-form video alters the modern Music Industry, transforming A&R scouting, album length, and fan royalty economics. Unpack modern streaming now!',
     targetKeyword: 'Music Industry',
   },
 
   // Backward compatible route aliases
+  'songs-for-focus': {
+    path: '/best-songs-for-driving-studying-gaming',
+    title: 'Songs for Focus: Focus Music and Study Playlist for Driving & Gaming',
+    description: 'Discover the best songs for focus while driving, gaming, and studying backed by neuroscience. Stream curated focus music and study playlist tracks today.',
+    targetKeyword: 'songs for focus',
+  },
+  'best-songs-driving-studying': {
+    path: '/best-songs-for-driving-studying-gaming',
+    title: 'Songs for Focus: Focus Music and Study Playlist for Driving & Gaming',
+    description: 'Discover the best songs for focus while driving, gaming, and studying backed by neuroscience. Stream curated focus music and study playlist tracks today.',
+    targetKeyword: 'songs for focus',
+  },
+  'vocal-warm-up-exercises': {
+    path: '/singing-vocal-warm-up-exercises',
+    title: 'Vocal Warm Up Exercises: Daily Singing Warmups & Vocal Exercises',
+    description: 'Master essential vocal warm up exercises to protect vocal folds, smooth your break, and expand range. Learn daily vocal exercises and singing warmups today.',
+    targetKeyword: 'vocal warm up exercises',
+  },
+  'acoustic-guitar-for-beginners': {
+    path: '/acoustic-guitar-beginners-guide',
+    title: 'Acoustic Guitar for Beginners: Acoustic Guitar Chords & Lessons',
+    description: 'Learn acoustic guitar for beginners with step-by-step beginner guitar lessons, acoustic guitar chords, and fingerpicking tips. Start playing guitar today.',
+    targetKeyword: 'Acoustic guitar for beginners',
+  },
+  'songs-for-auditions': {
+    path: '/songs-for-auditions-top-vocal-tracks',
+    title: 'Songs for Auditions: Top 10 Vocal Tracks to Wow Judges',
+    description: 'Select the perfect Songs for Auditions across pop, theatre, and R&B to showcase dynamic vocal control. Impress casting directors and book your role today!',
+    targetKeyword: 'Songs for Auditions',
+  },
+  'trending-songs': {
+    path: '/trending-songs-on-tiktok',
+    title: 'Trending Songs on TikTok: How Tracks Go Viral Overnight',
+    description: 'Learn why Trending Songs conquer TikTok and social algorithms through hook design, dance challenges, and meme audio loops. Discover viral hit formulas today!',
+    targetKeyword: 'Trending Songs',
+  },
+  'music-industry': {
+    path: '/music-industry-revolution',
+    title: 'Music Industry Revolution: How TikTok Alters Global Hits',
+    description: 'See how short-form video alters the modern Music Industry, transforming A&R scouting, album length, and fan royalty economics. Unpack modern streaming now!',
+    targetKeyword: 'Music Industry',
+  },
   'best-songs-driving-gaming-studying': {
-    path: '/songs-for-focus',
+    path: '/best-songs-for-driving-studying-gaming',
     title: 'Songs for Focus: Focus Music and Study Playlist for Driving & Gaming',
     description: 'Discover the best songs for focus while driving, gaming, and studying backed by neuroscience. Stream curated focus music and study playlist tracks today.',
     targetKeyword: 'songs for focus',

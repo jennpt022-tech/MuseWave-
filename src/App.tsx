@@ -101,16 +101,16 @@ export default function App() {
     const matchedArticle = ARTICLES.find(a => {
       if (a.id === cleanSlug) return true;
       // Handle legacy or alias slugs containing 'focus', 'gaming', 'driving', 'vocal', etc.
-      if ((cleanSlug === 'songs-for-focus' || cleanSlug.includes('focus') || (cleanSlug.includes('driving') && cleanSlug.includes('studying'))) && a.id === 'songs-for-focus') return true;
-      if ((cleanSlug === 'vocal-warm-up-exercises' || cleanSlug.includes('vocal-warm')) && a.id === 'vocal-warm-up-exercises') return true;
-      if (cleanSlug.includes('acoustic-guitar') && a.id === 'acoustic-guitar-for-beginners') return true;
-      if (cleanSlug.includes('copyright') && a.id === 'ai-music-copyright-laws') return true;
-      if ((cleanSlug.includes('ticket') || cleanSlug.includes('concert')) && a.id === 'concert-ticket-prices') return true;
-      if (cleanSlug.includes('audition') && a.id === 'songs-for-auditions') return true;
-      if (cleanSlug.includes('trending') && a.id === 'trending-songs') return true;
-      if (cleanSlug.includes('writing') && a.id === 'song-writing-techniques') return true;
-      if (cleanSlug.includes('studying') && a.id === 'music-for-studying') return true;
-      if (cleanSlug.includes('industry') && a.id === 'music-industry') return true;
+      if ((cleanSlug === 'best-songs-for-driving-studying-gaming' || cleanSlug === 'songs-for-focus' || cleanSlug.includes('focus') || (cleanSlug.includes('driving') && cleanSlug.includes('studying')) || cleanSlug.includes('gaming')) && a.id === 'best-songs-for-driving-studying-gaming') return true;
+      if ((cleanSlug === 'singing-vocal-warm-up-exercises' || cleanSlug === 'vocal-warm-up-exercises' || cleanSlug.includes('vocal')) && a.id === 'singing-vocal-warm-up-exercises') return true;
+      if ((cleanSlug === 'acoustic-guitar-beginners-guide' || cleanSlug === 'acoustic-guitar-for-beginners' || cleanSlug.includes('acoustic-guitar')) && a.id === 'acoustic-guitar-beginners-guide') return true;
+      if ((cleanSlug === 'songs-for-auditions-top-vocal-tracks' || cleanSlug === 'songs-for-auditions' || cleanSlug.includes('audition')) && a.id === 'songs-for-auditions-top-vocal-tracks') return true;
+      if ((cleanSlug === 'trending-songs-on-tiktok' || cleanSlug === 'trending-songs' || cleanSlug.includes('trending')) && a.id === 'trending-songs-on-tiktok') return true;
+      if ((cleanSlug === 'song-writing-techniques' || cleanSlug.includes('writing')) && a.id === 'song-writing-techniques') return true;
+      if ((cleanSlug === 'music-for-studying' || cleanSlug.includes('lofi')) && a.id === 'music-for-studying') return true;
+      if ((cleanSlug === 'ai-music-copyright-laws' || cleanSlug.includes('copyright')) && a.id === 'ai-music-copyright-laws') return true;
+      if ((cleanSlug === 'concert-ticket-prices' || cleanSlug.includes('ticket')) && a.id === 'concert-ticket-prices') return true;
+      if ((cleanSlug === 'music-industry-revolution' || cleanSlug === 'music-industry' || cleanSlug.includes('industry')) && a.id === 'music-industry-revolution') return true;
       return false;
     });
 

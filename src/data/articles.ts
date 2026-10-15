@@ -3,7 +3,7 @@ import { Article } from '../types';
 export const ARTICLES: Article[] = [
   // 1. Songs for Focus: Best Songs While Driving, Gaming, and Studying
   {
-    id: 'songs-for-focus',
+    id: 'best-songs-for-driving-studying-gaming',
     title: 'Songs for Focus: Best Songs While Driving, Gaming, and Studying',
     subtitle: 'How focus music, neurological BPM entrainment, and curated study playlists optimize alertness behind the wheel, reaction times in esports, and deep cognitive study.',
     category: 'Focus & Productivity',
@@ -92,13 +92,13 @@ export const ARTICLES: Article[] = [
       },
       {
         title: 'Vocal Warm Up Exercises for Mental Grounding',
-        url: '/vocal-warm-up-exercises',
+        url: '/singing-vocal-warm-up-exercises',
         anchorText: 'Explore our guide on vocal warm up exercises to release performance tension',
         description: 'Learn how vocal cord vibration exercises ease neuromuscular stress before long study and driving sessions.'
       },
       {
         title: 'Beginner Acoustic Guitar Lessons',
-        url: '/acoustic-guitar-for-beginners',
+        url: '/acoustic-guitar-beginners-guide',
         anchorText: 'Read our beginner guitar lessons on acoustic guitar chords for mindful practice',
         description: 'Take tactile musical breaks from screens by mastering 4 essential open acoustic guitar chords.'
       }
@@ -113,7 +113,7 @@ export const ARTICLES: Article[] = [
 
   // 2. Essential Vocal Warm-Up Exercises for Singers
   {
-    id: 'vocal-warm-up-exercises',
+    id: 'singing-vocal-warm-up-exercises',
     title: 'Vocal Warm Up Exercises: Daily Singing Warmups & Vocal Exercises',
     subtitle: 'From lip trills and straw phonation to sirens and daily vocal exercises: the proven singing warmups used by touring vocalists and Broadway performers.',
     category: 'Vocal Mastery',
@@ -196,13 +196,13 @@ export const ARTICLES: Article[] = [
     relatedGuides: [
       {
         title: 'Top 10 Songs for Auditions',
-        url: '/songs-for-auditions',
+        url: '/songs-for-auditions-top-vocal-tracks',
         anchorText: 'Discover the top 10 songs for auditions to showcase your dynamic vocal range',
         description: 'Apply your warm-up techniques to audition songs selected specifically for Broadway and pop casting directors.'
       },
       {
         title: 'Songs for Focus and Vocal Performance Routine',
-        url: '/songs-for-focus',
+        url: '/best-songs-for-driving-studying-gaming',
         anchorText: 'Explore our focus music and study playlist guide for backstage mental preparation',
         description: 'How steady 80 BPM instrumental study playlists calm stage fright and optimize respiratory focus.'
       },
@@ -222,7 +222,7 @@ export const ARTICLES: Article[] = [
   },
   // 3. Beginner’s Guide to Learning Acoustic Guitar
   {
-    id: 'acoustic-guitar-for-beginners',
+    id: 'acoustic-guitar-beginners-guide',
     title: 'Acoustic Guitar for Beginners: Acoustic Guitar Chords & Lessons',
     subtitle: 'Essential beginner guitar lessons covering fundamental acoustic guitar chords, fretboard posture, ergonomic hand positioning, and rapid muscle memory drills.',
     category: 'Guitar & Gear',
@@ -311,13 +311,13 @@ export const ARTICLES: Article[] = [
       },
       {
         title: 'Vocal Warm Up Exercises for Acoustic Singer-Songwriters',
-        url: '/vocal-warm-up-exercises',
+        url: '/singing-vocal-warm-up-exercises',
         anchorText: 'Practice daily vocal warm up exercises to sing along with acoustic guitar',
         description: 'Build breath stamina and vocal pitch precision so you can sing effortlessly while strumming.'
       },
       {
         title: 'Songs for Focus and Daily Practice Routines',
-        url: '/songs-for-focus',
+        url: '/best-songs-for-driving-studying-gaming',
         anchorText: 'Check out our curated songs for focus and study playlists for focused practice',
         description: 'Use tempo entrainment audio to build steady metronome timing during guitar drills.'
       }
@@ -332,7 +332,7 @@ export const ARTICLES: Article[] = [
 
   // 4. Top 10 Best Songs for Vocal Practice and Auditions
   {
-    id: 'songs-for-auditions',
+    id: 'songs-for-auditions-top-vocal-tracks',
     title: 'Songs for Auditions: Top 10 Best Vocal Tracks to Showcase Dynamic Range',
     subtitle: 'A curated masterlist of vocal audition standards across pop, indie, theater, and soul selected by casting directors to showcase pitch accuracy, agility, and tone.',
     category: 'Vocal Mastery',
@@ -417,19 +417,19 @@ export const ARTICLES: Article[] = [
     relatedGuides: [
       {
         title: 'Vocal Warm Up Exercises for Singers',
-        url: '/vocal-warm-up-exercises',
+        url: '/singing-vocal-warm-up-exercises',
         anchorText: 'Explore our vocal warm up exercises for singers before your audition',
         description: 'Prepare your vocal cords with 15 minutes of semi-occluded singing warmups before stepping into the room.'
       },
       {
         title: 'Songs for Focus and Backstage Composure',
-        url: '/songs-for-focus',
+        url: '/best-songs-for-driving-studying-gaming',
         anchorText: 'Read our guide on songs for focus and study playlists for audition focus',
         description: 'Use steady tempo entrainment to manage performance adrenaline and calm your heart rate backstage.'
       },
       {
         title: 'Beginner Acoustic Guitar Lessons',
-        url: '/acoustic-guitar-for-beginners',
+        url: '/acoustic-guitar-beginners-guide',
         anchorText: 'Read our beginner guitar lessons on acoustic guitar chords',
         description: 'Accompany yourself on auditions by mastering fundamental 4-chord open acoustic guitar shapes.'
       }
@@ -444,7 +444,7 @@ export const ARTICLES: Article[] = [
 
   // 5. How Popular Songs Go Viral on TikTok and Social Media
   {
-    id: 'trending-songs',
+    id: 'trending-songs-on-tiktok',
     title: 'Trending Songs on TikTok: How Viral Tracks Reverse-Engineer the Social Algorithm',
     subtitle: 'Dissecting the 7-to-15 second audio hooks, pitch-shifted nightcore trends, memeable lyrical anchors, and user-generated sound choreography dominating the FYP.',
     category: 'Music Tech & Trends',
@@ -527,7 +527,7 @@ export const ARTICLES: Article[] = [
     relatedGuides: [
       {
         title: 'Modern Music Industry Revolution',
-        url: '/music-industry',
+        url: '/music-industry-revolution',
         anchorText: 'Read our analysis of how TikTok reshapes the modern music industry',
         description: 'See how short-form video alters the music industry, transforming A&R scouting and song runtimes.'
       },
@@ -641,19 +641,19 @@ export const ARTICLES: Article[] = [
     relatedGuides: [
       {
         title: 'Beginner Acoustic Guitar Lessons',
-        url: '/acoustic-guitar-for-beginners',
+        url: '/acoustic-guitar-beginners-guide',
         anchorText: 'Pair your lyrics with beginner guitar lessons on acoustic guitar chords',
         description: 'Learn open acoustic guitar chords to build melodic progressions beneath your lyrics.'
       },
       {
         title: 'Vocal Warm Up Exercises for Songwriters',
-        url: '/vocal-warm-up-exercises',
+        url: '/singing-vocal-warm-up-exercises',
         anchorText: 'Warm up your singing voice with daily vocal warm up exercises',
         description: 'Sing your new melodies with confidence using safe semi-occluded singing warmups.'
       },
       {
         title: 'Focus Music Playlists for Creative Flow',
-        url: '/songs-for-focus',
+        url: '/best-songs-for-driving-studying-gaming',
         anchorText: 'Explore our curated songs for focus and focus music playlists for songwriting flow',
         description: 'Maintain deep creative focus during lyric-writing sessions with lyric-free background soundscapes.'
       }
@@ -751,19 +751,19 @@ export const ARTICLES: Article[] = [
     relatedGuides: [
       {
         title: 'Songs for Focus and Driving Playlists',
-        url: '/songs-for-focus',
+        url: '/best-songs-for-driving-studying-gaming',
         anchorText: 'Read our comprehensive guide to songs for focus and driving study playlists',
         description: 'Explore optimal 70-85 BPM focus music that prevents cognitive overload.'
       },
       {
         title: 'Beginner Acoustic Guitar Lessons',
-        url: '/acoustic-guitar-for-beginners',
+        url: '/acoustic-guitar-beginners-guide',
         anchorText: 'Learn acoustic guitar chords for beginners during study breaks',
         description: 'Take mindful acoustic breaks with foundational 4-chord progressions.'
       },
       {
         title: 'Daily Singing Warmups and Vocal Exercises',
-        url: '/vocal-warm-up-exercises',
+        url: '/singing-vocal-warm-up-exercises',
         anchorText: 'Explore our daily singing warmups and vocal exercises',
         description: 'Release vocal cord strain and tension with semi-occluded warmups.'
       }
@@ -861,13 +861,13 @@ export const ARTICLES: Article[] = [
     relatedGuides: [
       {
         title: 'Modern Music Industry Evolution',
-        url: '/music-industry',
+        url: '/music-industry-revolution',
         anchorText: 'Read our analysis of short-form audio trends across the music industry',
         description: 'Understand how A&R automated analytics evaluate streaming data.'
       },
       {
         title: 'Trending Songs on TikTok',
-        url: '/trending-songs',
+        url: '/trending-songs-on-tiktok',
         anchorText: 'Learn how songs go viral on TikTok through algorithmic hooks',
         description: 'Examine the 10-second audio loop structures that spark social trends.'
       },
@@ -971,13 +971,13 @@ export const ARTICLES: Article[] = [
     relatedGuides: [
       {
         title: 'Music Industry and Streaming Realignment',
-        url: '/music-industry',
+        url: '/music-industry-revolution',
         anchorText: 'Read our in-depth report on how streaming alters the music industry',
         description: 'Explore the shift in musician income from streaming to live stadium touring.'
       },
       {
         title: 'Top 10 Songs for Auditions',
-        url: '/songs-for-auditions',
+        url: '/songs-for-auditions-top-vocal-tracks',
         anchorText: 'Discover the top 10 songs for auditions to showcase dynamic range live',
         description: 'Select vocal audition tracks that demonstrate pitch control and emotion.'
       },
@@ -998,7 +998,7 @@ export const ARTICLES: Article[] = [
 
   // 10. How TikTok and Short-Form Videos Are Changing the Music Industry
   {
-    id: 'music-industry',
+    id: 'music-industry-revolution',
     title: 'Music Industry Revolution: How TikTok and Short-Form Videos Reshape Pop Music',
     subtitle: 'Shorter track runtimes, frontloaded hooks, death of the guitar solo, A&R data scrapers, and the shift from album listening to micro-moment cultural virality.',
     category: 'Industry & Culture',
@@ -1081,7 +1081,7 @@ export const ARTICLES: Article[] = [
     relatedGuides: [
       {
         title: 'Trending Songs on TikTok',
-        url: '/trending-songs',
+        url: '/trending-songs-on-tiktok',
         anchorText: 'Analyze how trending songs on TikTok reverse-engineer viral algorithms',
         description: 'Learn how micro-hooks and nightcore speedups capture FYP attention.'
       },
