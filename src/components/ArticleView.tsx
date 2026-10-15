@@ -21,7 +21,8 @@ import {
   Headphones,
   Clock,
   ExternalLink,
-  HelpCircle
+  HelpCircle,
+  BookOpen
 } from 'lucide-react';
 
 interface ArticleViewProps {
@@ -333,7 +334,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           <div className="aspect-[16/9] overflow-hidden border border-[#D9D0C3] bg-[#EAE2D5]">
             <img
               src={article.coverImage}
-              alt={article.title}
+              alt={`${article.title} — Primary artwork and sound visualization: ${article.imageCaption || article.subtitle}`}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
             />
@@ -357,9 +358,9 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-center">
             <div className="md:col-span-2 space-y-2">
-              <h2 className="font-serif text-xl font-medium leading-snug">
+              <div className="font-serif text-xl font-medium leading-snug">
                 {article.keyTrack.title} — <span className="italic">{article.keyTrack.artist}</span> ({article.keyTrack.year})
-              </h2>
+              </div>
               <p className={`text-xs leading-relaxed ${mutedTextClass}`}>
                 {article.keyTrack.significance}
               </p>
@@ -393,11 +394,12 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                     href={article.keyTrack.spotifyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#1DB954] hover:bg-[#1ed760] text-black text-[11px] font-semibold rounded-full transition-colors"
-                    title="Open on Spotify"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#1DB954] hover:bg-[#1ed760] text-black text-[11px] font-semibold rounded-full transition-colors"
+                    title={`Listen to "${article.keyTrack.title}" by ${article.keyTrack.artist} on Spotify`}
+                    aria-label={`Listen to "${article.keyTrack.title}" by ${article.keyTrack.artist} on Spotify (opens in new tab)`}
                   >
-                    <ExternalLink className="w-3 h-3" />
-                    <span>Spotify</span>
+                    <ExternalLink className="w-3 h-3 shrink-0" />
+                    <span>Listen to "{article.keyTrack.title}" on Spotify</span>
                   </a>
                 )}
                 <span className="text-[11px] font-mono text-[#857B70] text-center md:text-right">
@@ -455,25 +457,25 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                   <div className="space-y-1">
                     {isQna && (
                       <div className="flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-[#8C3A27] font-semibold">
-                        <HelpCircle className="w-3.5 h-3.5 text-[#F5A623]" />
-                        <span>AEO Answer Engine Question</span>
+                        <HelpCircle className="w-3.5 h-3.5 text-[#8C3A27]" />
+                        <span>GEO Key Question & Answer</span>
                       </div>
                     )}
-                    <h2 className={`font-serif text-2xl sm:text-3xl font-medium tracking-tight pt-2 ${isQna ? 'text-[#8C3A27]' : 'text-[#1A1816]'}`}>
+                    <h2 className={`font-serif text-2xl sm:text-3xl font-medium tracking-tight pt-2 leading-snug ${isQna ? 'text-[#8C3A27]' : 'text-[#1A1816]'}`}>
                       {section.heading}
                     </h2>
                   </div>
                 )}
 
                 {section.paragraphs.map((p, pIdx) => {
-                  // Direct Answer callout block for AEO
+                  // Direct Answer callout block for GEO / AEO
                   if (p.startsWith('Direct Answer:')) {
                     const cleanAnswer = p.replace('Direct Answer:', '').trim();
                     return (
                       <div key={pIdx} className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-5 rounded-r-lg space-y-1.5 shadow-xs my-4">
                         <span className="text-[11px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1.5">
                           <Check className="w-3.5 h-3.5 text-[#8C3A27]" />
-                          <span>Direct Answer (AEO Summary)</span>
+                          <span>Direct Answer (GEO Key Takeaway)</span>
                         </span>
                         <p className="font-serif text-[#1A1816] font-medium text-base sm:text-lg leading-relaxed">
                           {cleanAnswer}
@@ -546,6 +548,64 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           );
         })}
         </div>
+
+        {/* Contextual Internal Links: Related Blog Guides */}
+        {article.relatedGuides && article.relatedGuides.length > 0 && (
+          <section className="p-6 bg-[#FAF6F0] border border-[#DDD5C7] rounded-lg space-y-4 shadow-xs">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#8C3A27] font-semibold">
+              <BookOpen className="w-4 h-4 text-[#8C3A27]" />
+              <span>Related In-Depth Music Guides & Contextual Internal Readings</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {article.relatedGuides.map((guide, gIdx) => {
+                const targetArticle = allArticles.find(a => a.id === guide.url.replace(/^\//, ''));
+                return (
+                  <div key={gIdx} className="p-4 bg-white border border-[#E6E0D6] rounded-md hover:border-[#8C3A27] transition-all flex flex-col justify-between space-y-3">
+                    <div className="space-y-1.5">
+                      <span className="text-[10px] font-mono uppercase text-[#857B70] tracking-wider block">Contextual Guide</span>
+                      <a
+                        href={guide.url}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (targetArticle) {
+                            onSelectArticle(targetArticle);
+                          } else {
+                            window.location.pathname = guide.url;
+                          }
+                        }}
+                        className="font-serif font-medium text-sm text-[#1A1816] hover:text-[#8C3A27] transition-colors line-clamp-2 block leading-snug"
+                        aria-label={guide.anchorText}
+                      >
+                        {guide.anchorText}
+                      </a>
+                      <p className="text-xs text-[#6B6256] leading-relaxed line-clamp-2">
+                        {guide.description}
+                      </p>
+                    </div>
+                    <div className="pt-2 border-t border-[#F0EBE1]">
+                      <a
+                        href={guide.url}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (targetArticle) {
+                            onSelectArticle(targetArticle);
+                          } else {
+                            window.location.pathname = guide.url;
+                          }
+                        }}
+                        className="text-[11px] font-mono font-semibold text-[#8C3A27] hover:underline flex items-center gap-1"
+                        aria-label={`Read guide: ${guide.anchorText}`}
+                      >
+                        <span>{guide.anchorText}</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </a>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {/* Recommended Archival Discography */}
         <section className="pt-10 border-t border-[#E6E0D6] space-y-6">
@@ -649,13 +709,14 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                 onSelectArticle(prevArticle);
               }}
               className="p-4 border border-[#E6E0D6] hover:border-[#8C3A27] text-left transition-colors cursor-pointer group bg-white"
+              aria-label={`Read previous article: ${prevArticle.title}`}
             >
               <span className="text-[10px] font-mono uppercase text-[#857B70] flex items-center gap-1 mb-1">
                 <ArrowLeft className="w-3 h-3 group-hover:-translate-x-1 transition-transform" />
-                Previous Essay
+                Previous Article
               </span>
               <span className="font-serif text-sm font-medium text-[#1A1816] group-hover:text-[#8C3A27] transition-colors line-clamp-1">
-                {prevArticle.title}
+                Read: {prevArticle.title}
               </span>
             </a>
           ) : <div />}
@@ -668,13 +729,14 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                 onSelectArticle(nextArticle);
               }}
               className="p-4 border border-[#E6E0D6] hover:border-[#8C3A27] text-right transition-colors cursor-pointer group bg-white"
+              aria-label={`Read next article: ${nextArticle.title}`}
             >
               <span className="text-[10px] font-mono uppercase text-[#857B70] flex items-center justify-end gap-1 mb-1">
-                Next Essay
+                Next Article
                 <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </span>
               <span className="font-serif text-sm font-medium text-[#1A1816] group-hover:text-[#8C3A27] transition-colors line-clamp-1">
-                {nextArticle.title}
+                Read: {nextArticle.title}
               </span>
             </a>
           )}

@@ -51,6 +51,12 @@ export interface Article {
     year: string;
     label: string;
   }[];
+  relatedGuides?: {
+    title: string;
+    url: string;
+    anchorText: string;
+    description: string;
+  }[];
   seoTitle?: string;
   metaDescription?: string;
   urlPath?: string;

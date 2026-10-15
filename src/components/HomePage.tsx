@@ -1,5 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { BILLBOARD_TOP_10, MUSIC_NEWS, BillboardTrack } from '../data/musicData';
+import { ARTICLES } from '../data/articles';
+import { Article } from '../types';
 import { searchRealSongs, RealSongResult } from '../services/realMusicApi';
 import { fetchArtistDetails, ArtistProfile, SPOTIFY_OFFICIAL_ARTIST_PHOTOS } from '../services/artistService';
 import { playRealSong, stopAllAudio, subscribeToAudio } from '../utils/audioPlayerManager';
@@ -30,9 +32,10 @@ import {
 
 interface HomePageProps {
   onNavigateToBlogs: () => void;
+  onSelectArticle?: (article: Article) => void;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
+export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs, onSelectArticle }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('All');
   const [currentTrack, setCurrentTrack] = useState<BillboardTrack>(BILLBOARD_TOP_10[0]);
@@ -200,10 +203,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
               <span>MuseWave Music & Artist Hub</span>
             </div>
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight">
-              Real Songs, Artists & Discographies
+              Music Industry News and Blogs: Latest Music News & Music Trends
             </h1>
             <p className="text-xs sm:text-sm text-[#A89F91] max-w-xl leading-relaxed">
-              Search any artist to explore their biography, full album discography, and top songs with live audio playback.
+              Your independent destination for Music Industry News and Blogs. Discover breaking latest music news, emerging music trends, verified Billboard charts, artist discographies, and deep studio audio lore with live playback.
             </p>
           </div>
 
@@ -215,6 +218,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
               onNavigateToBlogs();
             }}
             className="self-start md:self-auto flex items-center gap-2 px-4 py-2.5 bg-[#8C3A27] hover:bg-[#A3432D] text-white text-xs font-mono uppercase tracking-wider rounded-md transition-colors cursor-pointer shrink-0 shadow-md"
+            aria-label="Read all 10 in-depth Music Blog Essays"
           >
             <BookOpen className="w-4 h-4" />
             <span>Read 10 Music Blog Essays</span>
@@ -262,7 +266,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
                   {spotPhoto ? (
                     <img
                       src={spotPhoto}
-                      alt={artistName}
+                      alt={`Portrait photograph of artist ${artistName}`}
                       className="w-4 h-4 rounded-full object-cover shrink-0 border border-white/20"
                     />
                   ) : (
@@ -287,7 +291,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
             <div className="flex items-center gap-4 min-w-0">
               <img
                 src={matchedArtist.headerImage}
-                alt={matchedArtist.name}
+                alt={`Official spotlight artist portrait of ${matchedArtist.name} — ${matchedArtist.genre}`}
                 referrerPolicy="no-referrer"
                 className="w-16 h-16 rounded-full object-cover shrink-0 border-2 border-[#8C3A27] shadow"
               />
@@ -351,7 +355,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
                     <div className="flex items-center gap-2.5 min-w-0">
                       <img
                         src={song.artwork}
-                        alt={song.title}
+                        alt={`Album artwork for "${song.title}" by ${song.artist}`}
                         className="w-10 h-10 rounded object-cover shrink-0 bg-[#2E2823]"
                       />
                       <div className="min-w-0">
@@ -401,7 +405,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
             <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded overflow-hidden shrink-0 bg-[#292420] border border-[#3D362F]">
               <img
                 src={currentTrack.coverImage}
-                alt={currentTrack.title}
+                alt={`Now playing track artwork: "${currentTrack.title}" by ${currentTrack.artist}`}
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"
               />
@@ -420,7 +424,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
               <span className="text-[10px] font-mono uppercase text-[#F5A623] tracking-wider block">
                 {isAudioPlaying && activePlayingId === `bb-${currentTrack.rank}` ? 'Streaming Real Studio Audio' : 'Selected Track'}
               </span>
-              <h2 className="font-serif text-lg font-medium text-white truncate">{currentTrack.title}</h2>
+              <p className="font-serif text-lg font-medium text-white truncate">{currentTrack.title}</p>
               <p className="text-xs text-[#A89F91] truncate">
                 <button
                   onClick={() => handleOpenArtist(currentTrack.artist)}
@@ -522,7 +526,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
                         <div className="flex items-center gap-3">
                           <img
                             src={track.coverImage}
-                            alt={track.title}
+                            alt={`Billboard chart album cover for "${track.title}" by ${track.artist}`}
                             referrerPolicy="no-referrer"
                             className="w-10 h-10 rounded object-cover shrink-0 bg-[#EAE2D5]"
                           />
@@ -611,10 +615,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="p-1.5 text-[#857B70] hover:text-[#1DB954] transition-colors"
-                            title="Open on Spotify"
+                            className="p-1.5 text-[#857B70] hover:text-[#1DB954] transition-colors inline-flex items-center"
+                            title={`Listen to "${track.title}" by ${track.artist} on Spotify`}
+                            aria-label={`Listen to "${track.title}" by ${track.artist} on Spotify (opens in new tab)`}
                           >
                             <ExternalLink className="w-3.5 h-3.5" />
+                            <span className="sr-only">Listen to "{track.title}" by {track.artist} on Spotify</span>
                           </a>
                         </div>
                       </td>
@@ -737,95 +743,175 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Q&A Item 1 */}
-          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
-              <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
-              <span>AEO Quick Answer</span>
-            </div>
-            <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
-              What Are the Best Songs to Listen to While Driving, Studying, and Gaming? [AEO]
-            </h2>
-            <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
-                <Check className="w-3 h-3 text-[#8C3A27]" />
-                Direct Answer
-              </span>
-              <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
-                For studying, listen to lyric-free 70–85 BPM Lo-Fi beats or brown noise to prevent phonological cognitive interference. For highway driving, 100–125 BPM synthwave and mid-tempo rock maintain alertness without highway hypnosis. For competitive gaming, 128–140 BPM electronic synthwave accelerates reaction times.
+          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
+                <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
+                <span>GEO Verified Answer</span>
+              </div>
+              <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
+                What Are the Best Songs for Focus While Driving, Studying, and Gaming?
+              </h2>
+              <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
+                  <Check className="w-3 h-3 text-[#8C3A27]" />
+                  Direct Answer
+                </span>
+                <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
+                  For studying, listen to lyric-free 70–85 BPM Lo-Fi beats or brown noise to prevent phonological cognitive interference. For highway driving, 100–125 BPM synthwave and mid-tempo rock maintain alertness without highway hypnosis. For competitive gaming, 128–140 BPM electronic synthwave accelerates reaction times.
+                </p>
+              </div>
+              <p className="text-xs text-[#574F45] leading-relaxed">
+                Cognitive load theory proves that human working memory cannot process lyrics and text simultaneously without a 30%+ drop in retention.
               </p>
             </div>
-            <p className="text-xs text-[#574F45] leading-relaxed">
-              Cognitive load theory proves that human working memory cannot process lyrics and text simultaneously without a 30%+ drop in retention.
-            </p>
+            <div className="pt-2 border-t border-[#F0EBE1]">
+              <a
+                href="/songs-for-focus"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = ARTICLES.find(a => a.id === 'songs-for-focus');
+                  if (target) {
+                    if (onSelectArticle) onSelectArticle(target);
+                    else window.location.pathname = '/songs-for-focus';
+                  }
+                }}
+                className="text-xs font-semibold text-[#8C3A27] hover:underline flex items-center gap-1"
+                aria-label="Read our comprehensive guide on songs for focus, focus music, and study playlists"
+              >
+                <span>Read our comprehensive guide on songs for focus, focus music, and study playlists</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
 
           {/* Q&A Item 2 */}
-          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
-              <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
-              <span>AEO Quick Answer</span>
-            </div>
-            <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
-              How Do Popular Songs Go Viral on TikTok and Social Media in 2026? [AEO]
-            </h2>
-            <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
-                <Check className="w-3 h-3 text-[#8C3A27]" />
-                Direct Answer
-              </span>
-              <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
-                Songs go viral on TikTok by featuring 7-to-12 second seamless audio loops, punchy conversational or quotable lyrics that serve as meme punchlines, and pronounced rhythmic drops that creators easily synchronize with short-form video edits.
+          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
+                <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
+                <span>GEO Verified Answer</span>
+              </div>
+              <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
+                How Do Popular Music Trends Shape the Music Industry on TikTok?
+              </h2>
+              <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
+                  <Check className="w-3 h-3 text-[#8C3A27]" />
+                  Direct Answer
+                </span>
+                <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
+                  Songs go viral on TikTok by featuring 7-to-12 second seamless audio loops, punchy conversational or quotable lyrics that serve as meme punchlines, and pronounced rhythmic drops that creators easily synchronize with short-form video edits.
+                </p>
+              </div>
+              <p className="text-xs text-[#574F45] leading-relaxed">
+                Sped-up nightcore remixes (115–125% speed) further accelerate emotional urgency, allowing tracks to cross algorithmic discovery thresholds across thousands of user videos.
               </p>
             </div>
-            <p className="text-xs text-[#574F45] leading-relaxed">
-              Sped-up nightcore remixes (115–125% speed) further accelerate emotional urgency, allowing tracks to cross algorithmic discovery thresholds across thousands of user videos.
-            </p>
+            <div className="pt-2 border-t border-[#F0EBE1]">
+              <a
+                href="/trending-songs"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = ARTICLES.find(a => a.id === 'trending-songs');
+                  if (target) {
+                    if (onSelectArticle) onSelectArticle(target);
+                    else window.location.pathname = '/trending-songs';
+                  }
+                }}
+                className="text-xs font-semibold text-[#8C3A27] hover:underline flex items-center gap-1"
+                aria-label="Read our analysis of trending songs on TikTok and viral algorithms"
+              >
+                <span>Read our analysis of trending songs on TikTok and viral algorithms</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
 
           {/* Q&A Item 3 */}
-          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
-              <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
-              <span>AEO Quick Answer</span>
-            </div>
-            <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
-              What Is the Most Effective Vocal Warm-Up Exercise for Singers? [AEO]
-            </h2>
-            <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
-                <Check className="w-3 h-3 text-[#8C3A27]" />
-                Direct Answer
-              </span>
-              <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
-                Straw phonation (singing pitch glides through a narrow straw submerged in water) is universally recognized by laryngologists as the single most effective SOVT exercise to alleviate vocal strain and smooth the passaggio break.
+          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
+                <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
+                <span>GEO Verified Answer</span>
+              </div>
+              <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
+                What Are the Best Vocal Warm Up Exercises for Daily Singing Warmups?
+              </h2>
+              <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
+                  <Check className="w-3 h-3 text-[#8C3A27]" />
+                  Direct Answer
+                </span>
+                <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
+                  Straw phonation (singing pitch glides through a narrow straw submerged in water) is universally recognized by laryngologists as the single most effective SOVT exercise to alleviate vocal strain and smooth the passaggio break.
+                </p>
+              </div>
+              <p className="text-xs text-[#574F45] leading-relaxed">
+                Back-pressure cushions the vocal cords, enabling full mucosal vibration without muscular squeeze or tension.
               </p>
             </div>
-            <p className="text-xs text-[#574F45] leading-relaxed">
-              Back-pressure cushions the vocal cords, enabling full mucosal vibration without muscular squeeze or tension.
-            </p>
+            <div className="pt-2 border-t border-[#F0EBE1]">
+              <a
+                href="/vocal-warm-up-exercises"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = ARTICLES.find(a => a.id === 'vocal-warm-up-exercises');
+                  if (target) {
+                    if (onSelectArticle) onSelectArticle(target);
+                    else window.location.pathname = '/vocal-warm-up-exercises';
+                  }
+                }}
+                className="text-xs font-semibold text-[#8C3A27] hover:underline flex items-center gap-1"
+                aria-label="Explore our complete guide on daily vocal warm up exercises for singers"
+              >
+                <span>Explore our complete guide on daily vocal warm up exercises for singers</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
 
           {/* Q&A Item 4 */}
-          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
-              <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
-              <span>AEO Quick Answer</span>
-            </div>
-            <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
-              Which Acoustic Guitar Chords Should Beginners Learn First? [AEO]
-            </h2>
-            <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
-                <Check className="w-3 h-3 text-[#8C3A27]" />
-                Direct Answer
-              </span>
-              <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
-                Beginners should learn G Major, C Major, D Major, and E Minor first (the classic I-V-vi-IV progression). These 4 open chord shapes unlock over 1,000 famous songs across rock, pop, folk, and country.
+          <div className="bg-white border border-[#E6E0D6] rounded-xl p-6 space-y-3 shadow-xs flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#8C3A27] font-semibold">
+                <HelpCircle className="w-4 h-4 text-[#8C3A27]" />
+                <span>GEO Verified Answer</span>
+              </div>
+              <h2 className="font-serif text-lg sm:text-xl font-bold text-[#1A1816]">
+                Which Acoustic Guitar Chords Are Best for Beginner Guitar Lessons?
+              </h2>
+              <div className="bg-[#FAF5EE] border-l-4 border-[#8C3A27] p-3.5 rounded-r-md">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#8C3A27] font-bold block flex items-center gap-1">
+                  <Check className="w-3 h-3 text-[#8C3A27]" />
+                  Direct Answer
+                </span>
+                <p className="font-serif text-xs sm:text-sm text-[#2B2723] font-medium leading-relaxed">
+                  Beginners should learn G Major, C Major, D Major, and E Minor first (the classic I-V-vi-IV progression). These 4 open chord shapes unlock over 1,000 famous songs across rock, pop, folk, and country.
+                </p>
+              </div>
+              <p className="text-xs text-[#574F45] leading-relaxed">
+                Practicing 15 minutes daily with light-gauge strings prevents finger fatigue and develops sturdy calluses within two weeks.
               </p>
             </div>
-            <p className="text-xs text-[#574F45] leading-relaxed">
-              Practicing 15 minutes daily with light-gauge strings prevents finger fatigue and develops sturdy calluses within two weeks.
-            </p>
+            <div className="pt-2 border-t border-[#F0EBE1]">
+              <a
+                href="/acoustic-guitar-for-beginners"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = ARTICLES.find(a => a.id === 'acoustic-guitar-for-beginners');
+                  if (target) {
+                    if (onSelectArticle) onSelectArticle(target);
+                    else window.location.pathname = '/acoustic-guitar-for-beginners';
+                  }
+                }}
+                className="text-xs font-semibold text-[#8C3A27] hover:underline flex items-center gap-1"
+                aria-label="Read our beginner guitar lessons on acoustic guitar chords"
+              >
+                <span>Read our beginner guitar lessons on acoustic guitar chords</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -836,9 +922,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
           <span className="text-xs font-mono uppercase tracking-widest text-[#8C3A27] font-semibold">
             Dedicated Blog Section
           </span>
-          <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[#1A1816]">
+          <h2 className="font-serif text-2xl sm:text-3xl font-medium text-[#1A1816]">
             Explore All 10 In-Depth Music & Industry Articles
-          </h3>
+          </h2>
           <p className="text-xs sm:text-sm text-[#574F45] leading-relaxed">
             Dive into our full catalog of 10 comprehensive guides—covering driving/gaming/study soundtracks, essential vocal warm-ups, beginner acoustic guitar, audition repertoire, TikTok virality, songwriting lyrics, lofi beats vs. white noise, AI music copyright laws, concert ticket economics, and short-form video industry shifts.
           </p>
@@ -851,9 +937,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigateToBlogs }) => {
             onNavigateToBlogs();
           }}
           className="px-6 py-3 bg-[#1A1816] hover:bg-[#8C3A27] text-white text-xs font-mono uppercase tracking-wider rounded transition-colors cursor-pointer flex items-center gap-2 shrink-0 shadow-md"
+          aria-label="Explore all 10 in-depth music articles in our blog archive"
         >
           <BookOpen className="w-4 h-4" />
-          <span>Explore All 10 Articles</span>
+          <span>Explore All 10 In-Depth Music Articles</span>
           <ArrowRight className="w-4 h-4" />
         </a>
       </section>

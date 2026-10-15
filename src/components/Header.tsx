@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({
               onNavigate('/');
             }}
             className="text-left group cursor-pointer focus:outline-none"
-            aria-label="MuseWave Homepage"
+            aria-label="MuseWave Homepage: Music Journal, Blogs & Artist Hub"
           >
             <span className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#1A1816] group-hover:text-[#8C3A27] transition-colors">
               MUSEWAVE
@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({
           </span>
         </div>
 
-        {/* Zone 2: Clean, simple navigation links */}
+        {/* Zone 2: Clean, descriptive navigation links */}
         <nav className="flex items-center gap-6 sm:gap-8 text-sm font-medium text-[#574F45]">
           <a
             href="/"
@@ -49,6 +49,7 @@ export const Header: React.FC<HeaderProps> = ({
             className={`hover:text-[#1A1816] transition-colors cursor-pointer py-1 border-b-2 ${
               currentPath === '/' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
             }`}
+            aria-label="MuseWave Homepage"
           >
             Home
           </a>
@@ -62,8 +63,9 @@ export const Header: React.FC<HeaderProps> = ({
             className={`hover:text-[#1A1816] transition-colors cursor-pointer py-1 border-b-2 flex items-center gap-1.5 ${
               currentPath === '/blogs' || currentPath === '/music-blogs' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
             }`}
+            aria-label="Browse all 10 in-depth Music Blogs"
           >
-            <span>Blog</span>
+            <span>Music Blogs</span>
             <span className="text-[11px] font-mono bg-[#EFE9DF] text-[#8C3A27] font-semibold px-1.5 py-0.2 rounded-xs">
               10
             </span>
@@ -78,8 +80,9 @@ export const Header: React.FC<HeaderProps> = ({
             className={`hover:text-[#1A1816] transition-colors cursor-pointer py-1 border-b-2 ${
               currentPath === '/about' || currentPath === '/about-musewave' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
             }`}
+            aria-label="About MuseWave Sound Lab and Mission"
           >
-            About
+            About MuseWave
           </a>
 
           <a
@@ -91,8 +94,9 @@ export const Header: React.FC<HeaderProps> = ({
             className={`hover:text-[#1A1816] transition-colors cursor-pointer py-1 border-b-2 hidden sm:flex items-center gap-1.5 ${
               currentPath === '/saved' || currentPath === '/saved-articles' ? 'border-[#8C3A27] text-[#1A1816]' : 'border-transparent'
             }`}
+            aria-label="View Saved Reading Library"
           >
-            <span>Saved</span>
+            <span>Saved Articles</span>
             {savedCount > 0 && (
               <span className="text-xs font-mono bg-[#E8DFD3] text-[#4A4237] px-1.5 py-0.2 rounded-xs">
                 {savedCount}
@@ -107,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={onOpenSearch}
             className="p-2 text-[#574F45] hover:text-[#1A1816] hover:bg-[#EFE9DF] rounded-md transition-colors cursor-pointer flex items-center gap-1.5 text-xs"
             title="Search blog articles"
-            aria-label="Search blog"
+            aria-label="Search all 10 blog articles and artists"
           >
             <Search className="w-4 h-4" />
             <span className="hidden md:inline text-xs text-[#857B70]">Search</span>
@@ -120,9 +124,10 @@ export const Header: React.FC<HeaderProps> = ({
               onNavigate('/blogs');
             }}
             className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white bg-[#1A1816] hover:bg-[#8C3A27] rounded transition-colors cursor-pointer whitespace-nowrap"
+            aria-label="Explore all 10 Music Blog Articles"
           >
             <BookOpen className="w-3.5 h-3.5" />
-            <span>Read Blogs</span>
+            <span>Explore All Music Blogs</span>
           </a>
         </div>
 

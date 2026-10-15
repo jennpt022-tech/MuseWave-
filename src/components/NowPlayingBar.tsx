@@ -79,7 +79,7 @@ export const NowPlayingBar: React.FC = () => {
             {track.coverImage ? (
               <img
                 src={track.coverImage}
-                alt={track.title}
+                alt={`Now playing track artwork: "${track.title}" by ${track.artist}`}
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"
               />
@@ -138,17 +138,18 @@ export const NowPlayingBar: React.FC = () => {
         </div>
 
         {/* Right Actions: Real World Spotify Link & Close */}
-        <div className="flex items-center gap-3 justify-end flex-1 max-w-[200px]">
+        <div className="flex items-center gap-3 justify-end flex-1 max-w-[240px]">
           {track.spotifyUrl && (
             <a
               href={track.spotifyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#1DB954] hover:bg-[#1ed760] text-black text-xs font-semibold rounded-full transition-colors"
-              title="Open full track on Spotify"
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#1DB954] hover:bg-[#1ed760] text-black text-xs font-semibold rounded-full transition-colors whitespace-nowrap"
+              title={`Listen to "${track.title}" by ${track.artist} on Spotify`}
+              aria-label={`Listen to "${track.title}" by ${track.artist} on Spotify (opens in new tab)`}
             >
-              <ExternalLink className="w-3.5 h-3.5" />
-              <span>Spotify</span>
+              <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+              <span>Listen on Spotify</span>
             </a>
           )}
 

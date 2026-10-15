@@ -13,7 +13,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateToBlogs }) => {
           About The Publication
         </span>
         <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#1A1816]">
-          MuseWave: Music Hub, Lore & Culture
+          Music Journalism, Audio Lore & Culture: About MuseWave
         </h1>
         <p className="text-base sm:text-lg text-[#524B41] font-serif italic leading-relaxed">
           Founded in 2026 as an independent, reader-supported platform dedicated to sound discovery, viral music lore, and acoustic science.
@@ -68,9 +68,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateToBlogs }) => {
             onNavigateToBlogs();
           }}
           className="inline-flex items-center gap-2 px-6 py-3 bg-[#1A1816] hover:bg-[#8C3A27] text-white text-xs font-mono uppercase tracking-wider rounded transition-colors cursor-pointer"
+          aria-label="Explore all 10 long-form music blog essays in our library"
         >
           <BookOpen className="w-4 h-4" />
-          <span>Explore All 10 Blog Essays</span>
+          <span>Explore All 10 Music Blog Essays</span>
           <ArrowRight className="w-4 h-4" />
         </a>
       </div>

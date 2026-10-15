@@ -8,20 +8,20 @@ export interface PageSeoConfig {
 export const STATIC_PAGES_SEO: Record<string, PageSeoConfig> = {
   '/': {
     path: '/',
-    title: 'Music Journal & Blogs, Artist Hub: Discover Top Sound',
-    description: 'Explore our Music Journal & Blogs, Artist Hub for Billboard charts, verified Spotify audio, and deep music lore. Stream exclusive tracks and master sound now!',
-    targetKeyword: 'Music Journal & Blogs, Artist Hub',
+    title: 'Music Industry News and Blogs: Latest Music News & Music Trends',
+    description: 'Discover authoritative Music Industry News and Blogs, latest music news, emerging music trends, Billboard charts, and deep acoustic lore on MuseWave.',
+    targetKeyword: 'Music Industry News and Blogs',
   },
   '/blogs': {
     path: '/blogs',
-    title: 'Music Blogs & Audio Insights: Read Pro Artist Guides',
-    description: 'Read authoritative Music blogs on vocal health, acoustic guitar, TikTok virality, and studio songwriting. Discover proven music techniques and read today!',
+    title: 'Music Blogs & Industry Insights: Read Pro Artist Guides',
+    description: 'Read authoritative Music blogs on vocal warm up exercises, acoustic guitar for beginners, songs for focus, TikTok virality, and studio songwriting.',
     targetKeyword: 'Music blogs',
   },
   '/music-blogs': {
     path: '/blogs',
-    title: 'Music Blogs & Audio Insights: Read Pro Artist Guides',
-    description: 'Read authoritative Music blogs on vocal health, acoustic guitar, TikTok virality, and studio songwriting. Discover proven music techniques and read today!',
+    title: 'Music Blogs & Industry Insights: Read Pro Artist Guides',
+    description: 'Read authoritative Music blogs on vocal warm up exercises, acoustic guitar for beginners, songs for focus, TikTok virality, and studio songwriting.',
     targetKeyword: 'Music blogs',
   },
   '/about': {
@@ -51,23 +51,35 @@ export const STATIC_PAGES_SEO: Record<string, PageSeoConfig> = {
 };
 
 export const ARTICLE_SEO_CONFIGS: Record<string, PageSeoConfig> = {
+  'songs-for-focus': {
+    path: '/songs-for-focus',
+    title: 'Songs for Focus: Focus Music and Study Playlist for Driving & Gaming',
+    description: 'Discover the best songs for focus while driving, gaming, and studying backed by neuroscience. Stream curated focus music and study playlist tracks today.',
+    targetKeyword: 'songs for focus',
+  },
   'best-songs-driving-studying': {
-    path: '/best-songs-driving-studying',
-    title: 'Best Songs While Driving, Gaming, and Studying Playlists',
-    description: 'Discover the Best Songs While Driving, Gaming, and Studying backed by science. Learn optimal tempo ranges and stream curated focus audio to boost stamina now!',
-    targetKeyword: 'Best Songs While Driving, Gaming, and Studying',
+    path: '/songs-for-focus',
+    title: 'Songs for Focus: Focus Music and Study Playlist for Driving & Gaming',
+    description: 'Discover the best songs for focus while driving, gaming, and studying backed by neuroscience. Stream curated focus music and study playlist tracks today.',
+    targetKeyword: 'songs for focus',
+  },
+  'vocal-warm-up-exercises': {
+    path: '/vocal-warm-up-exercises',
+    title: 'Vocal Warm Up Exercises: Daily Singing Warmups & Vocal Exercises',
+    description: 'Master essential vocal warm up exercises to protect vocal folds, smooth your break, and expand range. Learn daily vocal exercises and singing warmups today.',
+    targetKeyword: 'vocal warm up exercises',
   },
   'singing-vocal-warm-up-exercises': {
-    path: '/singing-vocal-warm-up-exercises',
-    title: 'Singing Vocal Warm Up Exercises: Expand Your Range Now',
-    description: 'Master essential Singing Vocal Warm Up Exercises to protect vocal folds, smooth your break, and expand range. Learn Broadway warm-up routines and sing now!',
-    targetKeyword: 'Singing Vocal Warm Up Exercises',
+    path: '/vocal-warm-up-exercises',
+    title: 'Vocal Warm Up Exercises: Daily Singing Warmups & Vocal Exercises',
+    description: 'Master essential vocal warm up exercises to protect vocal folds, smooth your break, and expand range. Learn daily vocal exercises and singing warmups today.',
+    targetKeyword: 'vocal warm up exercises',
   },
   'acoustic-guitar-for-beginners': {
     path: '/acoustic-guitar-for-beginners',
-    title: 'Acoustic Guitar for Beginners: Master First Chords Fast',
-    description: 'Learn Acoustic Guitar for Beginners with step-by-step chord switching, fingerpicking drills, and strumming rhythm tips. Grab your guitar and start playing now!',
-    targetKeyword: 'Acoustic Guitar for Beginners',
+    title: 'Acoustic Guitar for Beginners: Acoustic Guitar Chords & Lessons',
+    description: 'Learn acoustic guitar for beginners with step-by-step beginner guitar lessons, acoustic guitar chords, and fingerpicking tips. Start playing guitar today.',
+    targetKeyword: 'Acoustic guitar for beginners',
   },
   'songs-for-auditions': {
     path: '/songs-for-auditions',
@@ -114,10 +126,10 @@ export const ARTICLE_SEO_CONFIGS: Record<string, PageSeoConfig> = {
 
   // Backward compatible route aliases
   'best-songs-driving-gaming-studying': {
-    path: '/best-songs-driving-studying',
-    title: 'Best Songs While Driving, Gaming, and Studying Playlists',
-    description: 'Discover the Best Songs While Driving, Gaming, and Studying backed by science. Learn optimal tempo ranges and stream curated focus audio to boost stamina now!',
-    targetKeyword: 'Best Songs While Driving, Gaming, and Studying',
+    path: '/songs-for-focus',
+    title: 'Songs for Focus: Focus Music and Study Playlist for Driving & Gaming',
+    description: 'Discover the best songs for focus while driving, gaming, and studying backed by neuroscience. Stream curated focus music and study playlist tracks today.',
+    targetKeyword: 'songs for focus',
   },
   'ai-music-generation-copyright-laws': {
     path: '/ai-music-copyright-laws',

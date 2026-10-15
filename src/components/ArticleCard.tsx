@@ -29,7 +29,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         {!imgError ? (
           <img
             src={article.coverImage}
-            alt={article.title}
+            alt={`${article.title} — ${article.category} editorial photography: ${article.imageCaption || article.subtitle}`}
             onError={() => setImgError(true)}
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ease-out"
@@ -114,6 +114,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
                 onSelect(article);
               }}
               className="hover:underline"
+              aria-label={`Read article: ${article.title}`}
             >
               {article.title}
             </a>
@@ -128,9 +129,9 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           </p>
         </div>
 
-        {/* Card Footer: Author and Read CTA */}
-        <div className="pt-3 border-t border-[#F0EBE1] flex items-center justify-between text-xs text-[#7A7165]">
-          <div className="flex items-center gap-2">
+        {/* Card Footer: Author and Descriptive Read CTA */}
+        <div className="pt-3 border-t border-[#F0EBE1] flex items-center justify-between gap-3 text-xs text-[#7A7165]">
+          <div className="flex items-center gap-2 shrink-0">
             <div className="w-6 h-6 rounded-full bg-[#EAE2D5] text-[#1A1816] font-serif font-bold text-[11px] flex items-center justify-center">
               {article.author.avatarInitials}
             </div>
@@ -143,9 +144,11 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
               e.preventDefault();
               onSelect(article);
             }}
-            className="text-xs font-semibold text-[#8C3A27] hover:underline cursor-pointer flex items-center gap-0.5"
+            className="text-xs font-semibold text-[#8C3A27] hover:underline cursor-pointer flex items-center gap-1 text-right"
+            aria-label={`Read full article on ${article.title}`}
           >
-            Read Story →
+            <span>Read Article: <span className="font-serif italic font-normal line-clamp-1 max-w-[150px] sm:max-w-[180px] inline-block align-bottom">{article.title}</span></span>
+            <span aria-hidden="true">→</span>
           </a>
         </div>
 

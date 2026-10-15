@@ -100,12 +100,12 @@ export default function App() {
     // 2. Check if path corresponds to an article slug (or backward compatible slug)
     const matchedArticle = ARTICLES.find(a => {
       if (a.id === cleanSlug) return true;
-      // Handle legacy or alias slugs containing 'gaming' or 'dynamic' or 'generation'
-      if ((cleanSlug.includes('driving') && cleanSlug.includes('studying')) && a.id === 'best-songs-driving-studying') return true;
+      // Handle legacy or alias slugs containing 'focus', 'gaming', 'driving', 'vocal', etc.
+      if ((cleanSlug === 'songs-for-focus' || cleanSlug.includes('focus') || (cleanSlug.includes('driving') && cleanSlug.includes('studying'))) && a.id === 'songs-for-focus') return true;
+      if ((cleanSlug === 'vocal-warm-up-exercises' || cleanSlug.includes('vocal-warm')) && a.id === 'vocal-warm-up-exercises') return true;
+      if (cleanSlug.includes('acoustic-guitar') && a.id === 'acoustic-guitar-for-beginners') return true;
       if (cleanSlug.includes('copyright') && a.id === 'ai-music-copyright-laws') return true;
       if ((cleanSlug.includes('ticket') || cleanSlug.includes('concert')) && a.id === 'concert-ticket-prices') return true;
-      if (cleanSlug.includes('vocal-warm') && a.id === 'singing-vocal-warm-up-exercises') return true;
-      if (cleanSlug.includes('acoustic-guitar') && a.id === 'acoustic-guitar-for-beginners') return true;
       if (cleanSlug.includes('audition') && a.id === 'songs-for-auditions') return true;
       if (cleanSlug.includes('trending') && a.id === 'trending-songs') return true;
       if (cleanSlug.includes('writing') && a.id === 'song-writing-techniques') return true;
@@ -305,6 +305,7 @@ export default function App() {
             {currentPage === 'home' && (
               <HomePage
                 onNavigateToBlogs={() => handleNavigate('/blogs')}
+                onSelectArticle={handleSelectArticle}
               />
             )}
 

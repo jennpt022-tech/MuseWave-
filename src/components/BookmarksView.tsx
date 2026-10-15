@@ -33,7 +33,7 @@ export const BookmarksView: React.FC<BookmarksViewProps> = ({
             <span>Personal Archive</span>
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl font-medium tracking-tight text-[#1A1816]">
-            Your Saved Reading List ({savedArticles.length})
+            Bookmarked Songs & Saved Articles ({savedArticles.length})
           </h1>
           <p className="text-sm text-[#574F45]">
             Essays and sonic analyses saved for deep, uninterrupted study.

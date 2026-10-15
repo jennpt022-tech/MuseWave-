@@ -67,7 +67,7 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({
           <span>The Music Blog · 10 Stories & Audio Breakdowns</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#1A1816]">
-          Music Guides, Vocal Craft & Industry Analysis
+          Music Blogs: Guides on Songwriting, Vocal Craft & Industry Trends
         </h1>
         <p className="text-base sm:text-lg text-[#524B41] font-serif italic max-w-3xl leading-relaxed">
           From driving/gaming/study focus playlists and essential vocal warm-ups to beginner acoustic guitar, TikTok virality, songwriting craft, AI music copyright, and live concert economics.

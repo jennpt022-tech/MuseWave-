@@ -39,6 +39,7 @@ export const Footer: React.FC<FooterProps> = ({
                 onNavigate('/');
               }}
               className="text-left font-serif text-3xl font-bold tracking-tight text-[#1A1816] hover:text-[#8C3A27] transition-colors cursor-pointer block"
+              aria-label="MuseWave Music Journal Homepage"
             >
               MUSEWAVE
             </a>
@@ -65,9 +66,10 @@ export const Footer: React.FC<FooterProps> = ({
                     onNavigate('/blogs');
                   }}
                   className="font-semibold text-[#8C3A27] hover:underline cursor-pointer flex items-center gap-1"
+                  aria-label="Browse all 10 long-form music blog articles"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
-                  <span>All 10 Blog Articles</span>
+                  <span>Browse All 10 Music Blog Articles</span>
                 </a>
               </li>
               <li>
@@ -79,8 +81,9 @@ export const Footer: React.FC<FooterProps> = ({
                     if (onSelectCategory) onSelectCategory('Focus & Productivity');
                   }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
+                  aria-label="Browse Focus and Productivity music articles"
                 >
-                  Focus & Productivity
+                  Focus & Productivity Music Articles
                 </a>
               </li>
               <li>
@@ -92,8 +95,9 @@ export const Footer: React.FC<FooterProps> = ({
                     if (onSelectCategory) onSelectCategory('Vocal Mastery');
                   }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
+                  aria-label="Browse Vocal Mastery singing warmup guides"
                 >
-                  Vocal Mastery
+                  Vocal Mastery & Warmup Guides
                 </a>
               </li>
               <li>
@@ -105,8 +109,9 @@ export const Footer: React.FC<FooterProps> = ({
                     if (onSelectCategory) onSelectCategory('Guitar & Gear');
                   }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
+                  aria-label="Browse Acoustic Guitar and Gear tutorials"
                 >
-                  Guitar & Gear
+                  Guitar Lessons & Acoustic Gear
                 </a>
               </li>
               <li>
@@ -118,8 +123,9 @@ export const Footer: React.FC<FooterProps> = ({
                     if (onSelectCategory) onSelectCategory('Songwriting Craft');
                   }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer"
+                  aria-label="Browse Songwriting Craft and lyrical analysis"
                 >
-                  Songwriting Craft
+                  Songwriting Craft & Lyric Structure
                 </a>
               </li>
               <li>
@@ -130,8 +136,9 @@ export const Footer: React.FC<FooterProps> = ({
                     onNavigate('/about');
                   }}
                   className="hover:text-[#8C3A27] transition-colors cursor-pointer pt-1 block"
+                  aria-label="Read about MuseWave Sound Lab and editorial mission"
                 >
-                  About MuseWave
+                  About MuseWave Sound Lab
                 </a>
               </li>
             </ul>
@@ -186,8 +193,9 @@ export const Footer: React.FC<FooterProps> = ({
                 onNavigate('/blogs');
               }}
               className="hover:text-[#1A1816] transition-colors cursor-pointer"
+              aria-label="Explore all 10 Music Blog articles in our archive"
             >
-              Blog (10 Articles)
+              Music Blog Archive (10 Articles)
             </a>
             <span>·</span>
             <a
@@ -197,13 +205,15 @@ export const Footer: React.FC<FooterProps> = ({
                 onNavigate('/about');
               }}
               className="hover:text-[#1A1816] transition-colors cursor-pointer"
+              aria-label="About MuseWave editorial sound team"
             >
-              About
+              About Editorial Team
             </a>
             <span>·</span>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="hover:text-[#1A1816] transition-colors cursor-pointer"
+              aria-label="Scroll back to top of page"
             >
               Back to Top
             </button>

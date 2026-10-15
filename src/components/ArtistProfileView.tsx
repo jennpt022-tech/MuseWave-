@@ -81,7 +81,7 @@ export const ArtistProfileView: React.FC<ArtistProfileViewProps> = ({ artist, on
           <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-full overflow-hidden shadow-2xl border-4 border-[#3D362F] shrink-0 bg-[#1E1C1A]">
             <img
               src={artist.headerImage}
-              alt={artist.name}
+              alt={`Official portrait photograph of verified recording artist ${artist.name}`}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
             />
@@ -134,9 +134,10 @@ export const ArtistProfileView: React.FC<ArtistProfileViewProps> = ({ artist, on
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-4 py-2.5 bg-[#1DB954] hover:bg-[#1ed760] text-black rounded-full font-mono text-xs font-semibold cursor-pointer transition-colors shadow"
+                aria-label={`Follow ${artist.name} on Spotify (opens in new tab)`}
               >
                 <ExternalLink className="w-3.5 h-3.5" />
-                <span>Follow on Spotify</span>
+                <span>Follow {artist.name} on Spotify</span>
               </a>
 
               <a
@@ -144,9 +145,10 @@ export const ArtistProfileView: React.FC<ArtistProfileViewProps> = ({ artist, on
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full font-mono text-xs font-medium cursor-pointer transition-colors"
+                aria-label={`Listen to ${artist.name} on Apple Music (opens in new tab)`}
               >
                 <Music className="w-3.5 h-3.5" />
-                <span>Apple Music</span>
+                <span>Listen on Apple Music</span>
               </a>
             </div>
           </div>
@@ -206,7 +208,7 @@ export const ArtistProfileView: React.FC<ArtistProfileViewProps> = ({ artist, on
                           <div className="flex items-center gap-3">
                             <img
                               src={song.artwork}
-                              alt={song.title}
+                              alt={`Album cover artwork for "${song.title}" recorded by ${artist.name}`}
                               className="w-9 h-9 rounded object-cover shrink-0 bg-[#EAE2D5]"
                             />
                             <div className="min-w-0">
@@ -378,7 +380,7 @@ export const ArtistProfileView: React.FC<ArtistProfileViewProps> = ({ artist, on
                 <div className="aspect-square w-full overflow-hidden bg-[#24201C] relative">
                   <img
                     src={album.artwork}
-                    alt={album.title}
+                    alt={`Official album cover art for "${album.title}" (${album.releaseYear}) by ${artist.name}`}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -403,10 +405,11 @@ export const ArtistProfileView: React.FC<ArtistProfileViewProps> = ({ artist, on
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="w-full inline-flex items-center justify-center gap-1 py-1 bg-[#FAF5EE] hover:bg-[#1DB954] hover:text-black text-[#574F45] text-[10px] font-mono rounded transition-colors"
+                        className="w-full inline-flex items-center justify-center gap-1.5 py-1 px-2 bg-[#FAF5EE] hover:bg-[#1DB954] hover:text-black text-[#574F45] text-[10px] font-mono rounded transition-colors"
+                        aria-label={`Stream "${album.title}" album on Spotify`}
                       >
                         <ExternalLink className="w-2.5 h-2.5" />
-                        <span>Spotify</span>
+                        <span>Stream "{album.title}" on Spotify</span>
                       </a>
                     </div>
                   )}
@@ -430,7 +433,7 @@ export const ArtistProfileView: React.FC<ArtistProfileViewProps> = ({ artist, on
             <div className="flex gap-4 items-center">
               <img
                 src={selectedAlbum.artwork}
-                alt={selectedAlbum.title}
+                alt={`Expanded album artwork view for "${selectedAlbum.title}" (${selectedAlbum.releaseYear})`}
                 className="w-24 h-24 rounded-lg object-cover shadow shrink-0"
               />
               <div className="min-w-0">

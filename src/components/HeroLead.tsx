@@ -36,7 +36,7 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
           <div className="relative group overflow-hidden bg-[#EAE3D6] aspect-[16/9] border border-[#DDD5C7]">
             <img
               src={leadArticle.coverImage}
-              alt={leadArticle.title}
+              alt={`${leadArticle.title} — Lead editorial cover photograph: ${leadArticle.imageCaption || leadArticle.subtitle}`}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover grayscale-[15%] group-hover:scale-[1.01] transition-transform duration-700 ease-out"
             />
@@ -62,11 +62,20 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
             </div>
 
             <h1
-              onClick={() => onSelectArticle(leadArticle)}
-              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#1A1816] hover:text-[#8C3A27] cursor-pointer transition-colors leading-[1.15]"
+              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-[#1A1816] hover:text-[#8C3A27] transition-colors leading-[1.15]"
               style={{ textWrap: 'balance' }}
             >
-              {leadArticle.title}
+              <a
+                href={`/${leadArticle.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectArticle(leadArticle);
+                }}
+                className="hover:underline"
+                aria-label={`Read lead essay: ${leadArticle.title}`}
+              >
+                {leadArticle.title}
+              </a>
             </h1>
 
             <p className="text-base sm:text-lg text-[#524B41] font-serif italic leading-relaxed">
@@ -102,13 +111,18 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
                   <span>{playingPreset === leadArticle.keyTrack.audioPreset ? 'Playing Audio' : 'Play Sound Motif'}</span>
                 </button>
 
-                <button
-                  onClick={() => onSelectArticle(leadArticle)}
-                  className="flex items-center gap-1 px-4 py-2 text-xs font-medium text-white bg-[#1A1816] hover:bg-[#8C3A27] rounded transition-colors cursor-pointer"
+                <a
+                  href={`/${leadArticle.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectArticle(leadArticle);
+                  }}
+                  className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-[#1A1816] hover:bg-[#8C3A27] rounded transition-colors cursor-pointer"
+                  aria-label={`Read complete lead essay on ${leadArticle.title}`}
                 >
-                  <span>Read Essay</span>
+                  <span>Read Complete Essay: {leadArticle.title}</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
+                </a>
               </div>
             </div>
 
@@ -130,7 +144,7 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
                     <div className="w-28 sm:w-36 aspect-[4/3] shrink-0 bg-[#EAE3D6] overflow-hidden border border-[#DDD5C7]">
                       <img
                         src={article.coverImage}
-                        alt={article.title}
+                        alt={`${article.title} — ${article.category} featured editorial image: ${article.imageCaption || article.subtitle}`}
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
@@ -143,10 +157,19 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
                       </div>
                       
                       <h3
-                        onClick={() => onSelectArticle(article)}
-                        className="font-serif text-lg sm:text-xl font-medium text-[#1A1816] group-hover:text-[#8C3A27] transition-colors cursor-pointer leading-snug"
+                        className="font-serif text-lg sm:text-xl font-medium text-[#1A1816] group-hover:text-[#8C3A27] transition-colors leading-snug"
                       >
-                        {article.title}
+                        <a
+                          href={`/${article.id}`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            onSelectArticle(article);
+                          }}
+                          className="hover:underline"
+                          aria-label={`Read featured article: ${article.title}`}
+                        >
+                          {article.title}
+                        </a>
                       </h3>
 
                       <p className="text-xs text-[#524B41] line-clamp-2 leading-relaxed">
